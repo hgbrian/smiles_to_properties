@@ -1,0 +1,348 @@
+Command line
+python /usr/local/bin/chemprop_train --data_path sider.csv --dataset_type classification --save_dir sider_checkpoints --smiles_columns smiles --ignore_columns mol_id
+Args
+{'activation': 'ReLU',
+ 'adding_h': False,
+ 'aggregation': 'mean',
+ 'aggregation_norm': 100,
+ 'atom_descriptor_scaling': True,
+ 'atom_descriptors': None,
+ 'atom_descriptors_path': None,
+ 'atom_descriptors_size': 0,
+ 'atom_features_size': 0,
+ 'atom_messages': False,
+ 'batch_size': 50,
+ 'bias': False,
+ 'bias_solvent': False,
+ 'bond_feature_scaling': True,
+ 'bond_features_path': None,
+ 'bond_features_size': 0,
+ 'cache_cutoff': 10000,
+ 'checkpoint_dir': None,
+ 'checkpoint_frzn': None,
+ 'checkpoint_path': None,
+ 'checkpoint_paths': None,
+ 'class_balance': False,
+ 'config_path': None,
+ 'crossval_index_dir': None,
+ 'crossval_index_file': None,
+ 'crossval_index_sets': None,
+ 'cuda': False,
+ 'data_path': 'sider.csv',
+ 'data_weights_path': None,
+ 'dataset_type': 'classification',
+ 'depth': 3,
+ 'depth_solvent': 3,
+ 'device': device(type='cpu'),
+ 'dropout': 0.0,
+ 'empty_cache': False,
+ 'ensemble_size': 1,
+ 'epochs': 30,
+ 'evidential_regularization': 0,
+ 'explicit_h': False,
+ 'extra_metrics': [],
+ 'features_generator': None,
+ 'features_only': False,
+ 'features_path': None,
+ 'features_scaling': True,
+ 'features_size': None,
+ 'ffn_hidden_size': 300,
+ 'ffn_num_layers': 2,
+ 'final_lr': 0.0001,
+ 'folds_file': None,
+ 'freeze_first_only': False,
+ 'frzn_ffn_layers': 0,
+ 'gpu': None,
+ 'grad_clip': None,
+ 'hidden_size': 300,
+ 'hidden_size_solvent': 300,
+ 'ignore_columns': ['mol_id'],
+ 'init_lr': 0.0001,
+ 'log_frequency': 10,
+ 'loss_function': 'binary_cross_entropy',
+ 'max_data_size': None,
+ 'max_lr': 0.001,
+ 'metric': 'auc',
+ 'metrics': ['auc'],
+ 'minimize_score': False,
+ 'mpn_shared': False,
+ 'multiclass_num_classes': 3,
+ 'no_atom_descriptor_scaling': False,
+ 'no_bond_features_scaling': False,
+ 'no_cache_mol': False,
+ 'no_cuda': False,
+ 'no_features_scaling': False,
+ 'num_folds': 1,
+ 'num_lrs': 1,
+ 'num_tasks': 27,
+ 'num_workers': 8,
+ 'number_of_molecules': 1,
+ 'overwrite_default_atom_features': False,
+ 'overwrite_default_bond_features': False,
+ 'phase_features_path': None,
+ 'pytorch_seed': 0,
+ 'quiet': False,
+ 'reaction': False,
+ 'reaction_mode': 'reac_diff',
+ 'reaction_solvent': False,
+ 'resume_experiment': False,
+ 'save_dir': 'sider_checkpoints',
+ 'save_preds': False,
+ 'save_smiles_splits': False,
+ 'seed': 0,
+ 'separate_test_atom_descriptors_path': None,
+ 'separate_test_bond_features_path': None,
+ 'separate_test_features_path': None,
+ 'separate_test_path': None,
+ 'separate_test_phase_features_path': None,
+ 'separate_val_atom_descriptors_path': None,
+ 'separate_val_bond_features_path': None,
+ 'separate_val_features_path': None,
+ 'separate_val_path': None,
+ 'separate_val_phase_features_path': None,
+ 'show_individual_scores': False,
+ 'smiles_columns': ['smiles'],
+ 'spectra_activation': 'exp',
+ 'spectra_phase_mask_path': None,
+ 'spectra_target_floor': 1e-08,
+ 'split_key_molecule': 0,
+ 'split_sizes': [0.8, 0.1, 0.1],
+ 'split_type': 'random',
+ 'target_columns': None,
+ 'target_weights': None,
+ 'task_names': ['Hepatobiliary disorders',
+                'Metabolism and nutrition disorders',
+                'Product issues',
+                'Eye disorders',
+                'Investigations',
+                'Musculoskeletal and connective tissue disorders',
+                'Gastrointestinal disorders',
+                'Social circumstances',
+                'Immune system disorders',
+                'Reproductive system and breast disorders',
+                'Neoplasms benign, malignant and unspecified (incl cysts and '
+                'polyps)',
+                'General disorders and administration site conditions',
+                'Endocrine disorders',
+                'Surgical and medical procedures',
+                'Vascular disorders',
+                'Blood and lymphatic system disorders',
+                'Skin and subcutaneous tissue disorders',
+                'Congenital, familial and genetic disorders',
+                'Infections and infestations',
+                'Respiratory, thoracic and mediastinal disorders',
+                'Psychiatric disorders',
+                'Renal and urinary disorders',
+                'Pregnancy, puerperium and perinatal conditions',
+                'Ear and labyrinth disorders',
+                'Cardiac disorders',
+                'Nervous system disorders',
+                'Injury, poisoning and procedural complications'],
+ 'test': False,
+ 'test_fold_index': None,
+ 'train_data_size': None,
+ 'undirected': False,
+ 'use_input_features': False,
+ 'val_fold_index': None,
+ 'warmup_epochs': 2.0}
+Setting molecule featurization parameters to default.
+Loading data
+Number of tasks = 27
+Fold 0
+Splitting data with seed 0
+Class sizes
+Hepatobiliary disorders 0: 47.93%, 1: 52.07%
+Metabolism and nutrition disorders 0: 30.20%, 1: 69.80%
+Product issues 0: 98.46%, 1: 1.54%
+Eye disorders 0: 38.61%, 1: 61.39%
+Investigations 0: 19.34%, 1: 80.66%
+Musculoskeletal and connective tissue disorders 0: 30.13%, 1: 69.87%
+Gastrointestinal disorders 0: 9.04%, 1: 90.96%
+Social circumstances 0: 82.41%, 1: 17.59%
+Immune system disorders 0: 28.24%, 1: 71.76%
+Reproductive system and breast disorders 0: 49.05%, 1: 50.95%
+Neoplasms benign, malignant and unspecified (incl cysts and polyps) 0: 73.65%, 1: 26.35%
+General disorders and administration site conditions 0: 9.46%, 1: 90.54%
+Endocrine disorders 0: 77.37%, 1: 22.63%
+Surgical and medical procedures 0: 85.07%, 1: 14.93%
+Vascular disorders 0: 22.35%, 1: 77.65%
+Blood and lymphatic system disorders 0: 37.98%, 1: 62.02%
+Skin and subcutaneous tissue disorders 0: 7.64%, 1: 92.36%
+Congenital, familial and genetic disorders 0: 82.27%, 1: 17.73%
+Infections and infestations 0: 29.50%, 1: 70.50%
+Respiratory, thoracic and mediastinal disorders 0: 25.72%, 1: 74.28%
+Psychiatric disorders 0: 28.80%, 1: 71.20%
+Renal and urinary disorders 0: 36.16%, 1: 63.84%
+Pregnancy, puerperium and perinatal conditions 0: 91.24%, 1: 8.76%
+Ear and labyrinth disorders 0: 53.82%, 1: 46.18%
+Cardiac disorders 0: 30.76%, 1: 69.24%
+Nervous system disorders 0: 8.62%, 1: 91.38%
+Injury, poisoning and procedural complications 0: 33.71%, 1: 66.29%
+Total size = 1,427 | train size = 1,141 | val size = 143 | test size = 143
+Building model 0
+MoleculeModel(
+  (sigmoid): Sigmoid()
+  (encoder): MPN(
+    (encoder): ModuleList(
+      (0): MPNEncoder(
+        (dropout_layer): Dropout(p=0.0, inplace=False)
+        (act_func): ReLU()
+        (W_i): Linear(in_features=147, out_features=300, bias=False)
+        (W_h): Linear(in_features=300, out_features=300, bias=False)
+        (W_o): Linear(in_features=433, out_features=300, bias=True)
+      )
+    )
+  )
+  (ffn): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): Linear(in_features=300, out_features=300, bias=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=300, out_features=27, bias=True)
+  )
+)
+Number of parameters = 363,027
+Epoch 0
+Loss = 6.3500e-01, PNorm = 34.7335, GNorm = 0.2827, lr_0 = 3.2500e-04
+Loss = 5.3058e-01, PNorm = 34.7607, GNorm = 0.4510, lr_0 = 5.2955e-04
+Validation auc = 0.548492
+Epoch 1
+Loss = 5.2129e-01, PNorm = 34.7743, GNorm = 0.2718, lr_0 = 7.5455e-04
+Loss = 5.1223e-01, PNorm = 34.8088, GNorm = 0.2828, lr_0 = 9.5909e-04
+Validation auc = 0.560872
+Epoch 2
+Loss = 5.1509e-01, PNorm = 34.8484, GNorm = 0.1509, lr_0 = 9.7054e-04
+Loss = 5.1176e-01, PNorm = 34.8993, GNorm = 0.1610, lr_0 = 9.3493e-04
+Validation auc = 0.580475
+Epoch 3
+Loss = 5.0828e-01, PNorm = 34.9509, GNorm = 0.1023, lr_0 = 9.0063e-04
+Loss = 5.1139e-01, PNorm = 35.0084, GNorm = 0.1915, lr_0 = 8.6758e-04
+Loss = 5.0253e-01, PNorm = 35.0627, GNorm = 0.2083, lr_0 = 8.3575e-04
+Validation auc = 0.584386
+Epoch 4
+Loss = 4.9964e-01, PNorm = 35.1186, GNorm = 0.2007, lr_0 = 8.0509e-04
+Loss = 5.0608e-01, PNorm = 35.1765, GNorm = 0.1717, lr_0 = 7.7555e-04
+Validation auc = 0.585873
+Epoch 5
+Loss = 4.9166e-01, PNorm = 35.2359, GNorm = 0.1380, lr_0 = 7.4710e-04
+Loss = 5.0487e-01, PNorm = 35.3046, GNorm = 0.2056, lr_0 = 7.1969e-04
+Validation auc = 0.593439
+Epoch 6
+Loss = 5.1207e-01, PNorm = 35.3686, GNorm = 0.1443, lr_0 = 6.9069e-04
+Loss = 4.9192e-01, PNorm = 35.4396, GNorm = 0.3956, lr_0 = 6.6535e-04
+Validation auc = 0.596663
+Epoch 7
+Loss = 4.9792e-01, PNorm = 35.5032, GNorm = 0.1695, lr_0 = 6.4094e-04
+Loss = 4.9441e-01, PNorm = 35.5763, GNorm = 0.2207, lr_0 = 6.1743e-04
+Loss = 4.9962e-01, PNorm = 35.6425, GNorm = 0.1403, lr_0 = 5.9477e-04
+Validation auc = 0.587173
+Epoch 8
+Loss = 4.9186e-01, PNorm = 35.7044, GNorm = 0.3131, lr_0 = 5.7295e-04
+Loss = 4.8864e-01, PNorm = 35.7735, GNorm = 0.1929, lr_0 = 5.5193e-04
+Validation auc = 0.598617
+Epoch 9
+Loss = 4.7181e-01, PNorm = 35.8352, GNorm = 0.1206, lr_0 = 5.3168e-04
+Loss = 4.9365e-01, PNorm = 35.9066, GNorm = 0.1446, lr_0 = 5.1217e-04
+Validation auc = 0.599133
+Epoch 10
+Loss = 4.7450e-01, PNorm = 35.9736, GNorm = 0.1423, lr_0 = 4.9338e-04
+Loss = 4.8221e-01, PNorm = 36.0416, GNorm = 0.1535, lr_0 = 4.7528e-04
+Loss = 4.8536e-01, PNorm = 36.1091, GNorm = 0.1612, lr_0 = 4.5784e-04
+Validation auc = 0.608528
+Epoch 11
+Loss = 4.7703e-01, PNorm = 36.1741, GNorm = 0.2333, lr_0 = 4.4104e-04
+Loss = 4.8574e-01, PNorm = 36.2416, GNorm = 0.4049, lr_0 = 4.2486e-04
+Validation auc = 0.603635
+Epoch 12
+Loss = 4.7371e-01, PNorm = 36.3133, GNorm = 0.2648, lr_0 = 4.0775e-04
+Loss = 4.7334e-01, PNorm = 36.3815, GNorm = 0.3066, lr_0 = 3.9279e-04
+Validation auc = 0.608301
+Epoch 13
+Loss = 4.8352e-01, PNorm = 36.4330, GNorm = 0.1582, lr_0 = 3.7837e-04
+Loss = 4.7287e-01, PNorm = 36.4947, GNorm = 0.1748, lr_0 = 3.6449e-04
+Validation auc = 0.614253
+Epoch 14
+Loss = 4.6901e-01, PNorm = 36.5482, GNorm = 0.2832, lr_0 = 3.5112e-04
+Loss = 4.8396e-01, PNorm = 36.6081, GNorm = 0.2465, lr_0 = 3.3824e-04
+Loss = 4.7455e-01, PNorm = 36.6566, GNorm = 0.4169, lr_0 = 3.2583e-04
+Validation auc = 0.621765
+Epoch 15
+Loss = 4.7893e-01, PNorm = 36.7099, GNorm = 0.1404, lr_0 = 3.1387e-04
+Loss = 4.6354e-01, PNorm = 36.7635, GNorm = 0.2029, lr_0 = 3.0236e-04
+Validation auc = 0.609629
+Epoch 16
+Loss = 4.6375e-01, PNorm = 36.8061, GNorm = 0.2798, lr_0 = 2.9126e-04
+Loss = 4.7157e-01, PNorm = 36.8515, GNorm = 0.3239, lr_0 = 2.8058e-04
+Validation auc = 0.620352
+Epoch 17
+Loss = 4.7292e-01, PNorm = 36.8971, GNorm = 0.2459, lr_0 = 2.6927e-04
+Loss = 4.6263e-01, PNorm = 36.9372, GNorm = 0.4835, lr_0 = 2.5939e-04
+Loss = 4.7274e-01, PNorm = 36.9780, GNorm = 0.4824, lr_0 = 2.4988e-04
+Validation auc = 0.619982
+Epoch 18
+Loss = 4.6258e-01, PNorm = 37.0164, GNorm = 0.2701, lr_0 = 2.4071e-04
+Loss = 4.6487e-01, PNorm = 37.0548, GNorm = 0.3159, lr_0 = 2.3188e-04
+Validation auc = 0.622736
+Epoch 19
+Loss = 4.5360e-01, PNorm = 37.0916, GNorm = 0.1643, lr_0 = 2.2337e-04
+Loss = 4.6074e-01, PNorm = 37.1279, GNorm = 0.5073, lr_0 = 2.1518e-04
+Validation auc = 0.622054
+Epoch 20
+Loss = 4.5262e-01, PNorm = 37.1612, GNorm = 0.1831, lr_0 = 2.0728e-04
+Loss = 4.5919e-01, PNorm = 37.1949, GNorm = 0.1624, lr_0 = 1.9968e-04
+Validation auc = 0.621453
+Epoch 21
+Loss = 4.6873e-01, PNorm = 37.2283, GNorm = 0.2098, lr_0 = 1.9235e-04
+Loss = 4.5325e-01, PNorm = 37.2599, GNorm = 0.1985, lr_0 = 1.8529e-04
+Loss = 4.6034e-01, PNorm = 37.2884, GNorm = 0.2091, lr_0 = 1.7849e-04
+Validation auc = 0.627929
+Epoch 22
+Loss = 4.5742e-01, PNorm = 37.3176, GNorm = 0.1973, lr_0 = 1.7195e-04
+Loss = 4.6362e-01, PNorm = 37.3448, GNorm = 0.3513, lr_0 = 1.6564e-04
+Validation auc = 0.618024
+Epoch 23
+Loss = 4.5823e-01, PNorm = 37.3732, GNorm = 0.3582, lr_0 = 1.5896e-04
+Loss = 4.6230e-01, PNorm = 37.3994, GNorm = 0.2087, lr_0 = 1.5313e-04
+Validation auc = 0.619669
+Epoch 24
+Loss = 4.4668e-01, PNorm = 37.4227, GNorm = 0.4443, lr_0 = 1.4751e-04
+Loss = 4.5366e-01, PNorm = 37.4445, GNorm = 0.2406, lr_0 = 1.4210e-04
+Loss = 4.5929e-01, PNorm = 37.4672, GNorm = 0.2651, lr_0 = 1.3689e-04
+Validation auc = 0.622466
+Epoch 25
+Loss = 4.6086e-01, PNorm = 37.4900, GNorm = 0.4921, lr_0 = 1.3187e-04
+Loss = 4.5477e-01, PNorm = 37.5116, GNorm = 0.2050, lr_0 = 1.2703e-04
+Validation auc = 0.621919
+Epoch 26
+Loss = 4.3755e-01, PNorm = 37.5312, GNorm = 0.2284, lr_0 = 1.2237e-04
+Loss = 4.5609e-01, PNorm = 37.5521, GNorm = 0.2407, lr_0 = 1.1788e-04
+Validation auc = 0.623036
+Epoch 27
+Loss = 4.4689e-01, PNorm = 37.5684, GNorm = 0.3064, lr_0 = 1.1355e-04
+Loss = 4.5226e-01, PNorm = 37.5845, GNorm = 0.2378, lr_0 = 1.0939e-04
+Validation auc = 0.624528
+Epoch 28
+Loss = 4.7195e-01, PNorm = 37.6034, GNorm = 0.2070, lr_0 = 1.0498e-04
+Loss = 4.5295e-01, PNorm = 37.6184, GNorm = 0.2839, lr_0 = 1.0113e-04
+Loss = 4.4863e-01, PNorm = 37.6340, GNorm = 0.2082, lr_0 = 1.0000e-04
+Validation auc = 0.625246
+Epoch 29
+Loss = 4.4735e-01, PNorm = 37.6516, GNorm = 0.4631, lr_0 = 1.0000e-04
+Loss = 4.4827e-01, PNorm = 37.6689, GNorm = 0.2815, lr_0 = 1.0000e-04
+Validation auc = 0.626714
+Model 0 best validation auc = 0.627929 on epoch 21
+Loading pretrained parameter "encoder.encoder.0.cached_zero_vector".
+Loading pretrained parameter "encoder.encoder.0.W_i.weight".
+Loading pretrained parameter "encoder.encoder.0.W_h.weight".
+Loading pretrained parameter "encoder.encoder.0.W_o.weight".
+Loading pretrained parameter "encoder.encoder.0.W_o.bias".
+Loading pretrained parameter "ffn.1.weight".
+Loading pretrained parameter "ffn.1.bias".
+Loading pretrained parameter "ffn.4.weight".
+Loading pretrained parameter "ffn.4.bias".
+Model 0 test auc = 0.656528
+Ensemble test auc = 0.656528
+1-fold cross validation
+	Seed 0 ==> test auc = 0.656528
+Overall test auc = 0.656528 +/- 0.000000
+Elapsed time = 0:02:50
