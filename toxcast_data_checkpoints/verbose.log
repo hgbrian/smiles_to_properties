@@ -1,0 +1,2219 @@
+Command line
+python /usr/local/bin/chemprop_train --data_path toxcast_data.csv --dataset_type classification --save_dir toxcast_data_checkpoints --smiles_columns smiles --ignore_columns mol_id
+Args
+{'activation': 'ReLU',
+ 'adding_h': False,
+ 'aggregation': 'mean',
+ 'aggregation_norm': 100,
+ 'atom_descriptor_scaling': True,
+ 'atom_descriptors': None,
+ 'atom_descriptors_path': None,
+ 'atom_descriptors_size': 0,
+ 'atom_features_size': 0,
+ 'atom_messages': False,
+ 'batch_size': 50,
+ 'bias': False,
+ 'bias_solvent': False,
+ 'bond_feature_scaling': True,
+ 'bond_features_path': None,
+ 'bond_features_size': 0,
+ 'cache_cutoff': 10000,
+ 'checkpoint_dir': None,
+ 'checkpoint_frzn': None,
+ 'checkpoint_path': None,
+ 'checkpoint_paths': None,
+ 'class_balance': False,
+ 'config_path': None,
+ 'crossval_index_dir': None,
+ 'crossval_index_file': None,
+ 'crossval_index_sets': None,
+ 'cuda': False,
+ 'data_path': 'toxcast_data.csv',
+ 'data_weights_path': None,
+ 'dataset_type': 'classification',
+ 'depth': 3,
+ 'depth_solvent': 3,
+ 'device': device(type='cpu'),
+ 'dropout': 0.0,
+ 'empty_cache': False,
+ 'ensemble_size': 1,
+ 'epochs': 30,
+ 'evidential_regularization': 0,
+ 'explicit_h': False,
+ 'extra_metrics': [],
+ 'features_generator': None,
+ 'features_only': False,
+ 'features_path': None,
+ 'features_scaling': True,
+ 'features_size': None,
+ 'ffn_hidden_size': 300,
+ 'ffn_num_layers': 2,
+ 'final_lr': 0.0001,
+ 'folds_file': None,
+ 'freeze_first_only': False,
+ 'frzn_ffn_layers': 0,
+ 'gpu': None,
+ 'grad_clip': None,
+ 'hidden_size': 300,
+ 'hidden_size_solvent': 300,
+ 'ignore_columns': ['mol_id'],
+ 'init_lr': 0.0001,
+ 'log_frequency': 10,
+ 'loss_function': 'binary_cross_entropy',
+ 'max_data_size': None,
+ 'max_lr': 0.001,
+ 'metric': 'auc',
+ 'metrics': ['auc'],
+ 'minimize_score': False,
+ 'mpn_shared': False,
+ 'multiclass_num_classes': 3,
+ 'no_atom_descriptor_scaling': False,
+ 'no_bond_features_scaling': False,
+ 'no_cache_mol': False,
+ 'no_cuda': False,
+ 'no_features_scaling': False,
+ 'num_folds': 1,
+ 'num_lrs': 1,
+ 'num_tasks': 617,
+ 'num_workers': 8,
+ 'number_of_molecules': 1,
+ 'overwrite_default_atom_features': False,
+ 'overwrite_default_bond_features': False,
+ 'phase_features_path': None,
+ 'pytorch_seed': 0,
+ 'quiet': False,
+ 'reaction': False,
+ 'reaction_mode': 'reac_diff',
+ 'reaction_solvent': False,
+ 'resume_experiment': False,
+ 'save_dir': 'toxcast_data_checkpoints',
+ 'save_preds': False,
+ 'save_smiles_splits': False,
+ 'seed': 0,
+ 'separate_test_atom_descriptors_path': None,
+ 'separate_test_bond_features_path': None,
+ 'separate_test_features_path': None,
+ 'separate_test_path': None,
+ 'separate_test_phase_features_path': None,
+ 'separate_val_atom_descriptors_path': None,
+ 'separate_val_bond_features_path': None,
+ 'separate_val_features_path': None,
+ 'separate_val_path': None,
+ 'separate_val_phase_features_path': None,
+ 'show_individual_scores': False,
+ 'smiles_columns': ['smiles'],
+ 'spectra_activation': 'exp',
+ 'spectra_phase_mask_path': None,
+ 'spectra_target_floor': 1e-08,
+ 'split_key_molecule': 0,
+ 'split_sizes': [0.8, 0.1, 0.1],
+ 'split_type': 'random',
+ 'target_columns': None,
+ 'target_weights': None,
+ 'task_names': ['ACEA_T47D_80hr_Negative',
+                'ACEA_T47D_80hr_Positive',
+                'APR_HepG2_CellCycleArrest_24h_dn',
+                'APR_HepG2_CellCycleArrest_24h_up',
+                'APR_HepG2_CellCycleArrest_72h_dn',
+                'APR_HepG2_CellLoss_24h_dn',
+                'APR_HepG2_CellLoss_72h_dn',
+                'APR_HepG2_MicrotubuleCSK_24h_dn',
+                'APR_HepG2_MicrotubuleCSK_24h_up',
+                'APR_HepG2_MicrotubuleCSK_72h_dn',
+                'APR_HepG2_MicrotubuleCSK_72h_up',
+                'APR_HepG2_MitoMass_24h_dn',
+                'APR_HepG2_MitoMass_24h_up',
+                'APR_HepG2_MitoMass_72h_dn',
+                'APR_HepG2_MitoMass_72h_up',
+                'APR_HepG2_MitoMembPot_1h_dn',
+                'APR_HepG2_MitoMembPot_24h_dn',
+                'APR_HepG2_MitoMembPot_72h_dn',
+                'APR_HepG2_MitoticArrest_24h_up',
+                'APR_HepG2_MitoticArrest_72h_up',
+                'APR_HepG2_NuclearSize_24h_dn',
+                'APR_HepG2_NuclearSize_72h_dn',
+                'APR_HepG2_NuclearSize_72h_up',
+                'APR_HepG2_OxidativeStress_24h_up',
+                'APR_HepG2_OxidativeStress_72h_up',
+                'APR_HepG2_StressKinase_1h_up',
+                'APR_HepG2_StressKinase_24h_up',
+                'APR_HepG2_StressKinase_72h_up',
+                'APR_HepG2_p53Act_24h_up',
+                'APR_HepG2_p53Act_72h_up',
+                'APR_Hepat_Apoptosis_24hr_up',
+                'APR_Hepat_Apoptosis_48hr_up',
+                'APR_Hepat_CellLoss_24hr_dn',
+                'APR_Hepat_CellLoss_48hr_dn',
+                'APR_Hepat_DNADamage_24hr_up',
+                'APR_Hepat_DNADamage_48hr_up',
+                'APR_Hepat_DNATexture_24hr_up',
+                'APR_Hepat_DNATexture_48hr_up',
+                'APR_Hepat_MitoFxnI_1hr_dn',
+                'APR_Hepat_MitoFxnI_24hr_dn',
+                'APR_Hepat_MitoFxnI_48hr_dn',
+                'APR_Hepat_NuclearSize_24hr_dn',
+                'APR_Hepat_NuclearSize_48hr_dn',
+                'APR_Hepat_Steatosis_24hr_up',
+                'APR_Hepat_Steatosis_48hr_up',
+                'ATG_AP_1_CIS_dn',
+                'ATG_AP_1_CIS_up',
+                'ATG_AP_2_CIS_dn',
+                'ATG_AP_2_CIS_up',
+                'ATG_AR_TRANS_dn',
+                'ATG_AR_TRANS_up',
+                'ATG_Ahr_CIS_dn',
+                'ATG_Ahr_CIS_up',
+                'ATG_BRE_CIS_dn',
+                'ATG_BRE_CIS_up',
+                'ATG_CAR_TRANS_dn',
+                'ATG_CAR_TRANS_up',
+                'ATG_CMV_CIS_dn',
+                'ATG_CMV_CIS_up',
+                'ATG_CRE_CIS_dn',
+                'ATG_CRE_CIS_up',
+                'ATG_C_EBP_CIS_dn',
+                'ATG_C_EBP_CIS_up',
+                'ATG_DR4_LXR_CIS_dn',
+                'ATG_DR4_LXR_CIS_up',
+                'ATG_DR5_CIS_dn',
+                'ATG_DR5_CIS_up',
+                'ATG_E2F_CIS_dn',
+                'ATG_E2F_CIS_up',
+                'ATG_EGR_CIS_up',
+                'ATG_ERE_CIS_dn',
+                'ATG_ERE_CIS_up',
+                'ATG_ERRa_TRANS_dn',
+                'ATG_ERRg_TRANS_dn',
+                'ATG_ERRg_TRANS_up',
+                'ATG_ERa_TRANS_up',
+                'ATG_E_Box_CIS_dn',
+                'ATG_E_Box_CIS_up',
+                'ATG_Ets_CIS_dn',
+                'ATG_Ets_CIS_up',
+                'ATG_FXR_TRANS_up',
+                'ATG_FoxA2_CIS_dn',
+                'ATG_FoxA2_CIS_up',
+                'ATG_FoxO_CIS_dn',
+                'ATG_FoxO_CIS_up',
+                'ATG_GAL4_TRANS_dn',
+                'ATG_GATA_CIS_dn',
+                'ATG_GATA_CIS_up',
+                'ATG_GLI_CIS_dn',
+                'ATG_GLI_CIS_up',
+                'ATG_GRE_CIS_dn',
+                'ATG_GRE_CIS_up',
+                'ATG_GR_TRANS_dn',
+                'ATG_GR_TRANS_up',
+                'ATG_HIF1a_CIS_dn',
+                'ATG_HIF1a_CIS_up',
+                'ATG_HNF4a_TRANS_dn',
+                'ATG_HNF4a_TRANS_up',
+                'ATG_HNF6_CIS_dn',
+                'ATG_HNF6_CIS_up',
+                'ATG_HSE_CIS_dn',
+                'ATG_HSE_CIS_up',
+                'ATG_IR1_CIS_dn',
+                'ATG_IR1_CIS_up',
+                'ATG_ISRE_CIS_dn',
+                'ATG_ISRE_CIS_up',
+                'ATG_LXRa_TRANS_dn',
+                'ATG_LXRa_TRANS_up',
+                'ATG_LXRb_TRANS_dn',
+                'ATG_LXRb_TRANS_up',
+                'ATG_MRE_CIS_up',
+                'ATG_M_06_TRANS_up',
+                'ATG_M_19_CIS_dn',
+                'ATG_M_19_TRANS_dn',
+                'ATG_M_19_TRANS_up',
+                'ATG_M_32_CIS_dn',
+                'ATG_M_32_CIS_up',
+                'ATG_M_32_TRANS_dn',
+                'ATG_M_32_TRANS_up',
+                'ATG_M_61_TRANS_up',
+                'ATG_Myb_CIS_dn',
+                'ATG_Myb_CIS_up',
+                'ATG_Myc_CIS_dn',
+                'ATG_Myc_CIS_up',
+                'ATG_NFI_CIS_dn',
+                'ATG_NFI_CIS_up',
+                'ATG_NF_kB_CIS_dn',
+                'ATG_NF_kB_CIS_up',
+                'ATG_NRF1_CIS_dn',
+                'ATG_NRF1_CIS_up',
+                'ATG_NRF2_ARE_CIS_dn',
+                'ATG_NRF2_ARE_CIS_up',
+                'ATG_NURR1_TRANS_dn',
+                'ATG_NURR1_TRANS_up',
+                'ATG_Oct_MLP_CIS_dn',
+                'ATG_Oct_MLP_CIS_up',
+                'ATG_PBREM_CIS_dn',
+                'ATG_PBREM_CIS_up',
+                'ATG_PPARa_TRANS_dn',
+                'ATG_PPARa_TRANS_up',
+                'ATG_PPARd_TRANS_up',
+                'ATG_PPARg_TRANS_up',
+                'ATG_PPRE_CIS_dn',
+                'ATG_PPRE_CIS_up',
+                'ATG_PXRE_CIS_dn',
+                'ATG_PXRE_CIS_up',
+                'ATG_PXR_TRANS_dn',
+                'ATG_PXR_TRANS_up',
+                'ATG_Pax6_CIS_up',
+                'ATG_RARa_TRANS_dn',
+                'ATG_RARa_TRANS_up',
+                'ATG_RARb_TRANS_dn',
+                'ATG_RARb_TRANS_up',
+                'ATG_RARg_TRANS_dn',
+                'ATG_RARg_TRANS_up',
+                'ATG_RORE_CIS_dn',
+                'ATG_RORE_CIS_up',
+                'ATG_RORb_TRANS_dn',
+                'ATG_RORg_TRANS_dn',
+                'ATG_RORg_TRANS_up',
+                'ATG_RXRa_TRANS_dn',
+                'ATG_RXRa_TRANS_up',
+                'ATG_RXRb_TRANS_dn',
+                'ATG_RXRb_TRANS_up',
+                'ATG_SREBP_CIS_dn',
+                'ATG_SREBP_CIS_up',
+                'ATG_STAT3_CIS_dn',
+                'ATG_STAT3_CIS_up',
+                'ATG_Sox_CIS_dn',
+                'ATG_Sox_CIS_up',
+                'ATG_Sp1_CIS_dn',
+                'ATG_Sp1_CIS_up',
+                'ATG_TAL_CIS_dn',
+                'ATG_TAL_CIS_up',
+                'ATG_TA_CIS_dn',
+                'ATG_TA_CIS_up',
+                'ATG_TCF_b_cat_CIS_dn',
+                'ATG_TCF_b_cat_CIS_up',
+                'ATG_TGFb_CIS_dn',
+                'ATG_TGFb_CIS_up',
+                'ATG_THRa1_TRANS_dn',
+                'ATG_THRa1_TRANS_up',
+                'ATG_VDRE_CIS_dn',
+                'ATG_VDRE_CIS_up',
+                'ATG_VDR_TRANS_dn',
+                'ATG_VDR_TRANS_up',
+                'ATG_XTT_Cytotoxicity_up',
+                'ATG_Xbp1_CIS_dn',
+                'ATG_Xbp1_CIS_up',
+                'ATG_p53_CIS_dn',
+                'ATG_p53_CIS_up',
+                'BSK_3C_Eselectin_down',
+                'BSK_3C_HLADR_down',
+                'BSK_3C_ICAM1_down',
+                'BSK_3C_IL8_down',
+                'BSK_3C_MCP1_down',
+                'BSK_3C_MIG_down',
+                'BSK_3C_Proliferation_down',
+                'BSK_3C_SRB_down',
+                'BSK_3C_Thrombomodulin_down',
+                'BSK_3C_Thrombomodulin_up',
+                'BSK_3C_TissueFactor_down',
+                'BSK_3C_TissueFactor_up',
+                'BSK_3C_VCAM1_down',
+                'BSK_3C_Vis_down',
+                'BSK_3C_uPAR_down',
+                'BSK_4H_Eotaxin3_down',
+                'BSK_4H_MCP1_down',
+                'BSK_4H_Pselectin_down',
+                'BSK_4H_Pselectin_up',
+                'BSK_4H_SRB_down',
+                'BSK_4H_VCAM1_down',
+                'BSK_4H_VEGFRII_down',
+                'BSK_4H_uPAR_down',
+                'BSK_4H_uPAR_up',
+                'BSK_BE3C_HLADR_down',
+                'BSK_BE3C_IL1a_down',
+                'BSK_BE3C_IP10_down',
+                'BSK_BE3C_MIG_down',
+                'BSK_BE3C_MMP1_down',
+                'BSK_BE3C_MMP1_up',
+                'BSK_BE3C_PAI1_down',
+                'BSK_BE3C_SRB_down',
+                'BSK_BE3C_TGFb1_down',
+                'BSK_BE3C_tPA_down',
+                'BSK_BE3C_uPAR_down',
+                'BSK_BE3C_uPAR_up',
+                'BSK_BE3C_uPA_down',
+                'BSK_CASM3C_HLADR_down',
+                'BSK_CASM3C_IL6_down',
+                'BSK_CASM3C_IL6_up',
+                'BSK_CASM3C_IL8_down',
+                'BSK_CASM3C_LDLR_down',
+                'BSK_CASM3C_LDLR_up',
+                'BSK_CASM3C_MCP1_down',
+                'BSK_CASM3C_MCP1_up',
+                'BSK_CASM3C_MCSF_down',
+                'BSK_CASM3C_MCSF_up',
+                'BSK_CASM3C_MIG_down',
+                'BSK_CASM3C_Proliferation_down',
+                'BSK_CASM3C_Proliferation_up',
+                'BSK_CASM3C_SAA_down',
+                'BSK_CASM3C_SAA_up',
+                'BSK_CASM3C_SRB_down',
+                'BSK_CASM3C_Thrombomodulin_down',
+                'BSK_CASM3C_Thrombomodulin_up',
+                'BSK_CASM3C_TissueFactor_down',
+                'BSK_CASM3C_VCAM1_down',
+                'BSK_CASM3C_VCAM1_up',
+                'BSK_CASM3C_uPAR_down',
+                'BSK_CASM3C_uPAR_up',
+                'BSK_KF3CT_ICAM1_down',
+                'BSK_KF3CT_IL1a_down',
+                'BSK_KF3CT_IP10_down',
+                'BSK_KF3CT_IP10_up',
+                'BSK_KF3CT_MCP1_down',
+                'BSK_KF3CT_MCP1_up',
+                'BSK_KF3CT_MMP9_down',
+                'BSK_KF3CT_SRB_down',
+                'BSK_KF3CT_TGFb1_down',
+                'BSK_KF3CT_TIMP2_down',
+                'BSK_KF3CT_uPA_down',
+                'BSK_LPS_CD40_down',
+                'BSK_LPS_Eselectin_down',
+                'BSK_LPS_Eselectin_up',
+                'BSK_LPS_IL1a_down',
+                'BSK_LPS_IL1a_up',
+                'BSK_LPS_IL8_down',
+                'BSK_LPS_IL8_up',
+                'BSK_LPS_MCP1_down',
+                'BSK_LPS_MCSF_down',
+                'BSK_LPS_PGE2_down',
+                'BSK_LPS_PGE2_up',
+                'BSK_LPS_SRB_down',
+                'BSK_LPS_TNFa_down',
+                'BSK_LPS_TNFa_up',
+                'BSK_LPS_TissueFactor_down',
+                'BSK_LPS_TissueFactor_up',
+                'BSK_LPS_VCAM1_down',
+                'BSK_SAg_CD38_down',
+                'BSK_SAg_CD40_down',
+                'BSK_SAg_CD69_down',
+                'BSK_SAg_Eselectin_down',
+                'BSK_SAg_Eselectin_up',
+                'BSK_SAg_IL8_down',
+                'BSK_SAg_IL8_up',
+                'BSK_SAg_MCP1_down',
+                'BSK_SAg_MIG_down',
+                'BSK_SAg_PBMCCytotoxicity_down',
+                'BSK_SAg_PBMCCytotoxicity_up',
+                'BSK_SAg_Proliferation_down',
+                'BSK_SAg_SRB_down',
+                'BSK_hDFCGF_CollagenIII_down',
+                'BSK_hDFCGF_EGFR_down',
+                'BSK_hDFCGF_EGFR_up',
+                'BSK_hDFCGF_IL8_down',
+                'BSK_hDFCGF_IP10_down',
+                'BSK_hDFCGF_MCSF_down',
+                'BSK_hDFCGF_MIG_down',
+                'BSK_hDFCGF_MMP1_down',
+                'BSK_hDFCGF_MMP1_up',
+                'BSK_hDFCGF_PAI1_down',
+                'BSK_hDFCGF_Proliferation_down',
+                'BSK_hDFCGF_SRB_down',
+                'BSK_hDFCGF_TIMP1_down',
+                'BSK_hDFCGF_VCAM1_down',
+                'CEETOX_H295R_11DCORT_dn',
+                'CEETOX_H295R_ANDR_dn',
+                'CEETOX_H295R_CORTISOL_dn',
+                'CEETOX_H295R_DOC_dn',
+                'CEETOX_H295R_DOC_up',
+                'CEETOX_H295R_ESTRADIOL_dn',
+                'CEETOX_H295R_ESTRADIOL_up',
+                'CEETOX_H295R_ESTRONE_dn',
+                'CEETOX_H295R_ESTRONE_up',
+                'CEETOX_H295R_OHPREG_up',
+                'CEETOX_H295R_OHPROG_dn',
+                'CEETOX_H295R_OHPROG_up',
+                'CEETOX_H295R_PROG_up',
+                'CEETOX_H295R_TESTO_dn',
+                'CLD_ABCB1_48hr',
+                'CLD_ABCG2_48hr',
+                'CLD_CYP1A1_24hr',
+                'CLD_CYP1A1_48hr',
+                'CLD_CYP1A1_6hr',
+                'CLD_CYP1A2_24hr',
+                'CLD_CYP1A2_48hr',
+                'CLD_CYP1A2_6hr',
+                'CLD_CYP2B6_24hr',
+                'CLD_CYP2B6_48hr',
+                'CLD_CYP2B6_6hr',
+                'CLD_CYP3A4_24hr',
+                'CLD_CYP3A4_48hr',
+                'CLD_CYP3A4_6hr',
+                'CLD_GSTA2_48hr',
+                'CLD_SULT2A_24hr',
+                'CLD_SULT2A_48hr',
+                'CLD_UGT1A1_24hr',
+                'CLD_UGT1A1_48hr',
+                'NCCT_HEK293T_CellTiterGLO',
+                'NCCT_QuantiLum_inhib_2_dn',
+                'NCCT_QuantiLum_inhib_dn',
+                'NCCT_TPO_AUR_dn',
+                'NCCT_TPO_GUA_dn',
+                'NHEERL_ZF_144hpf_TERATOSCORE_up',
+                'NVS_ADME_hCYP19A1',
+                'NVS_ADME_hCYP1A1',
+                'NVS_ADME_hCYP1A2',
+                'NVS_ADME_hCYP2A6',
+                'NVS_ADME_hCYP2B6',
+                'NVS_ADME_hCYP2C19',
+                'NVS_ADME_hCYP2C9',
+                'NVS_ADME_hCYP2D6',
+                'NVS_ADME_hCYP3A4',
+                'NVS_ADME_hCYP4F12',
+                'NVS_ADME_rCYP2C12',
+                'NVS_ENZ_hAChE',
+                'NVS_ENZ_hAMPKa1',
+                'NVS_ENZ_hAurA',
+                'NVS_ENZ_hBACE',
+                'NVS_ENZ_hCASP5',
+                'NVS_ENZ_hCK1D',
+                'NVS_ENZ_hDUSP3',
+                'NVS_ENZ_hES',
+                'NVS_ENZ_hElastase',
+                'NVS_ENZ_hFGFR1',
+                'NVS_ENZ_hGSK3b',
+                'NVS_ENZ_hMMP1',
+                'NVS_ENZ_hMMP13',
+                'NVS_ENZ_hMMP2',
+                'NVS_ENZ_hMMP3',
+                'NVS_ENZ_hMMP7',
+                'NVS_ENZ_hMMP9',
+                'NVS_ENZ_hPDE10',
+                'NVS_ENZ_hPDE4A1',
+                'NVS_ENZ_hPDE5',
+                'NVS_ENZ_hPI3Ka',
+                'NVS_ENZ_hPTEN',
+                'NVS_ENZ_hPTPN11',
+                'NVS_ENZ_hPTPN12',
+                'NVS_ENZ_hPTPN13',
+                'NVS_ENZ_hPTPN9',
+                'NVS_ENZ_hPTPRC',
+                'NVS_ENZ_hSIRT1',
+                'NVS_ENZ_hSIRT2',
+                'NVS_ENZ_hTrkA',
+                'NVS_ENZ_hVEGFR2',
+                'NVS_ENZ_oCOX1',
+                'NVS_ENZ_oCOX2',
+                'NVS_ENZ_rAChE',
+                'NVS_ENZ_rCNOS',
+                'NVS_ENZ_rMAOAC',
+                'NVS_ENZ_rMAOAP',
+                'NVS_ENZ_rMAOBC',
+                'NVS_ENZ_rMAOBP',
+                'NVS_ENZ_rabI2C',
+                'NVS_GPCR_bAdoR_NonSelective',
+                'NVS_GPCR_bDR_NonSelective',
+                'NVS_GPCR_g5HT4',
+                'NVS_GPCR_gH2',
+                'NVS_GPCR_gLTB4',
+                'NVS_GPCR_gLTD4',
+                'NVS_GPCR_gMPeripheral_NonSelective',
+                'NVS_GPCR_gOpiateK',
+                'NVS_GPCR_h5HT2A',
+                'NVS_GPCR_h5HT5A',
+                'NVS_GPCR_h5HT6',
+                'NVS_GPCR_h5HT7',
+                'NVS_GPCR_hAT1',
+                'NVS_GPCR_hAdoRA1',
+                'NVS_GPCR_hAdoRA2a',
+                'NVS_GPCR_hAdra2A',
+                'NVS_GPCR_hAdra2C',
+                'NVS_GPCR_hAdrb1',
+                'NVS_GPCR_hAdrb2',
+                'NVS_GPCR_hAdrb3',
+                'NVS_GPCR_hDRD1',
+                'NVS_GPCR_hDRD2s',
+                'NVS_GPCR_hDRD4.4',
+                'NVS_GPCR_hH1',
+                'NVS_GPCR_hLTB4_BLT1',
+                'NVS_GPCR_hM1',
+                'NVS_GPCR_hM2',
+                'NVS_GPCR_hM3',
+                'NVS_GPCR_hM4',
+                'NVS_GPCR_hNK2',
+                'NVS_GPCR_hOpiate_D1',
+                'NVS_GPCR_hOpiate_mu',
+                'NVS_GPCR_hTXA2',
+                'NVS_GPCR_p5HT2C',
+                'NVS_GPCR_r5HT1_NonSelective',
+                'NVS_GPCR_r5HT_NonSelective',
+                'NVS_GPCR_rAdra1B',
+                'NVS_GPCR_rAdra1_NonSelective',
+                'NVS_GPCR_rAdra2_NonSelective',
+                'NVS_GPCR_rAdrb_NonSelective',
+                'NVS_GPCR_rNK1',
+                'NVS_GPCR_rNK3',
+                'NVS_GPCR_rOpiate_NonSelective',
+                'NVS_GPCR_rOpiate_NonSelectiveNa',
+                'NVS_GPCR_rSST',
+                'NVS_GPCR_rTRH',
+                'NVS_GPCR_rV1',
+                'NVS_GPCR_rabPAF',
+                'NVS_GPCR_rmAdra2B',
+                'NVS_IC_hKhERGCh',
+                'NVS_IC_rCaBTZCHL',
+                'NVS_IC_rCaDHPRCh_L',
+                'NVS_IC_rNaCh_site2',
+                'NVS_LGIC_bGABARa1',
+                'NVS_LGIC_h5HT3',
+                'NVS_LGIC_hNNR_NBungSens',
+                'NVS_LGIC_rGABAR_NonSelective',
+                'NVS_LGIC_rNNR_BungSens',
+                'NVS_MP_hPBR',
+                'NVS_MP_rPBR',
+                'NVS_NR_bER',
+                'NVS_NR_bPR',
+                'NVS_NR_cAR',
+                'NVS_NR_hAR',
+                'NVS_NR_hCAR_Antagonist',
+                'NVS_NR_hER',
+                'NVS_NR_hFXR_Agonist',
+                'NVS_NR_hFXR_Antagonist',
+                'NVS_NR_hGR',
+                'NVS_NR_hPPARa',
+                'NVS_NR_hPPARg',
+                'NVS_NR_hPR',
+                'NVS_NR_hPXR',
+                'NVS_NR_hRAR_Antagonist',
+                'NVS_NR_hRARa_Agonist',
+                'NVS_NR_hTRa_Antagonist',
+                'NVS_NR_mERa',
+                'NVS_NR_rAR',
+                'NVS_NR_rMR',
+                'NVS_OR_gSIGMA_NonSelective',
+                'NVS_TR_gDAT',
+                'NVS_TR_hAdoT',
+                'NVS_TR_hDAT',
+                'NVS_TR_hNET',
+                'NVS_TR_hSERT',
+                'NVS_TR_rNET',
+                'NVS_TR_rSERT',
+                'NVS_TR_rVMAT2',
+                'OT_AR_ARELUC_AG_1440',
+                'OT_AR_ARSRC1_0480',
+                'OT_AR_ARSRC1_0960',
+                'OT_ER_ERaERa_0480',
+                'OT_ER_ERaERa_1440',
+                'OT_ER_ERaERb_0480',
+                'OT_ER_ERaERb_1440',
+                'OT_ER_ERbERb_0480',
+                'OT_ER_ERbERb_1440',
+                'OT_ERa_EREGFP_0120',
+                'OT_ERa_EREGFP_0480',
+                'OT_FXR_FXRSRC1_0480',
+                'OT_FXR_FXRSRC1_1440',
+                'OT_NURR1_NURR1RXRa_0480',
+                'OT_NURR1_NURR1RXRa_1440',
+                'TOX21_ARE_BLA_Agonist_ch1',
+                'TOX21_ARE_BLA_Agonist_ch2',
+                'TOX21_ARE_BLA_agonist_ratio',
+                'TOX21_ARE_BLA_agonist_viability',
+                'TOX21_AR_BLA_Agonist_ch1',
+                'TOX21_AR_BLA_Agonist_ch2',
+                'TOX21_AR_BLA_Agonist_ratio',
+                'TOX21_AR_BLA_Antagonist_ch1',
+                'TOX21_AR_BLA_Antagonist_ch2',
+                'TOX21_AR_BLA_Antagonist_ratio',
+                'TOX21_AR_BLA_Antagonist_viability',
+                'TOX21_AR_LUC_MDAKB2_Agonist',
+                'TOX21_AR_LUC_MDAKB2_Antagonist',
+                'TOX21_AR_LUC_MDAKB2_Antagonist2',
+                'TOX21_AhR_LUC_Agonist',
+                'TOX21_Aromatase_Inhibition',
+                'TOX21_AutoFluor_HEK293_Cell_blue',
+                'TOX21_AutoFluor_HEK293_Media_blue',
+                'TOX21_AutoFluor_HEPG2_Cell_blue',
+                'TOX21_AutoFluor_HEPG2_Cell_green',
+                'TOX21_AutoFluor_HEPG2_Media_blue',
+                'TOX21_AutoFluor_HEPG2_Media_green',
+                'TOX21_ELG1_LUC_Agonist',
+                'TOX21_ERa_BLA_Agonist_ch1',
+                'TOX21_ERa_BLA_Agonist_ch2',
+                'TOX21_ERa_BLA_Agonist_ratio',
+                'TOX21_ERa_BLA_Antagonist_ch1',
+                'TOX21_ERa_BLA_Antagonist_ch2',
+                'TOX21_ERa_BLA_Antagonist_ratio',
+                'TOX21_ERa_BLA_Antagonist_viability',
+                'TOX21_ERa_LUC_BG1_Agonist',
+                'TOX21_ERa_LUC_BG1_Antagonist',
+                'TOX21_ESRE_BLA_ch1',
+                'TOX21_ESRE_BLA_ch2',
+                'TOX21_ESRE_BLA_ratio',
+                'TOX21_ESRE_BLA_viability',
+                'TOX21_FXR_BLA_Antagonist_ch1',
+                'TOX21_FXR_BLA_Antagonist_ch2',
+                'TOX21_FXR_BLA_agonist_ch2',
+                'TOX21_FXR_BLA_agonist_ratio',
+                'TOX21_FXR_BLA_antagonist_ratio',
+                'TOX21_FXR_BLA_antagonist_viability',
+                'TOX21_GR_BLA_Agonist_ch1',
+                'TOX21_GR_BLA_Agonist_ch2',
+                'TOX21_GR_BLA_Agonist_ratio',
+                'TOX21_GR_BLA_Antagonist_ch2',
+                'TOX21_GR_BLA_Antagonist_ratio',
+                'TOX21_GR_BLA_Antagonist_viability',
+                'TOX21_HSE_BLA_agonist_ch1',
+                'TOX21_HSE_BLA_agonist_ch2',
+                'TOX21_HSE_BLA_agonist_ratio',
+                'TOX21_HSE_BLA_agonist_viability',
+                'TOX21_MMP_ratio_down',
+                'TOX21_MMP_ratio_up',
+                'TOX21_MMP_viability',
+                'TOX21_NFkB_BLA_agonist_ch1',
+                'TOX21_NFkB_BLA_agonist_ch2',
+                'TOX21_NFkB_BLA_agonist_ratio',
+                'TOX21_NFkB_BLA_agonist_viability',
+                'TOX21_PPARd_BLA_Agonist_viability',
+                'TOX21_PPARd_BLA_Antagonist_ch1',
+                'TOX21_PPARd_BLA_agonist_ch1',
+                'TOX21_PPARd_BLA_agonist_ch2',
+                'TOX21_PPARd_BLA_agonist_ratio',
+                'TOX21_PPARd_BLA_antagonist_ratio',
+                'TOX21_PPARd_BLA_antagonist_viability',
+                'TOX21_PPARg_BLA_Agonist_ch1',
+                'TOX21_PPARg_BLA_Agonist_ch2',
+                'TOX21_PPARg_BLA_Agonist_ratio',
+                'TOX21_PPARg_BLA_Antagonist_ch1',
+                'TOX21_PPARg_BLA_antagonist_ratio',
+                'TOX21_PPARg_BLA_antagonist_viability',
+                'TOX21_TR_LUC_GH3_Agonist',
+                'TOX21_TR_LUC_GH3_Antagonist',
+                'TOX21_VDR_BLA_Agonist_viability',
+                'TOX21_VDR_BLA_Antagonist_ch1',
+                'TOX21_VDR_BLA_agonist_ch2',
+                'TOX21_VDR_BLA_agonist_ratio',
+                'TOX21_VDR_BLA_antagonist_ratio',
+                'TOX21_VDR_BLA_antagonist_viability',
+                'TOX21_p53_BLA_p1_ch1',
+                'TOX21_p53_BLA_p1_ch2',
+                'TOX21_p53_BLA_p1_ratio',
+                'TOX21_p53_BLA_p1_viability',
+                'TOX21_p53_BLA_p2_ch1',
+                'TOX21_p53_BLA_p2_ch2',
+                'TOX21_p53_BLA_p2_ratio',
+                'TOX21_p53_BLA_p2_viability',
+                'TOX21_p53_BLA_p3_ch1',
+                'TOX21_p53_BLA_p3_ch2',
+                'TOX21_p53_BLA_p3_ratio',
+                'TOX21_p53_BLA_p3_viability',
+                'TOX21_p53_BLA_p4_ch1',
+                'TOX21_p53_BLA_p4_ch2',
+                'TOX21_p53_BLA_p4_ratio',
+                'TOX21_p53_BLA_p4_viability',
+                'TOX21_p53_BLA_p5_ch1',
+                'TOX21_p53_BLA_p5_ch2',
+                'TOX21_p53_BLA_p5_ratio',
+                'TOX21_p53_BLA_p5_viability',
+                'Tanguay_ZF_120hpf_AXIS_up',
+                'Tanguay_ZF_120hpf_ActivityScore',
+                'Tanguay_ZF_120hpf_BRAI_up',
+                'Tanguay_ZF_120hpf_CFIN_up',
+                'Tanguay_ZF_120hpf_CIRC_up',
+                'Tanguay_ZF_120hpf_EYE_up',
+                'Tanguay_ZF_120hpf_JAW_up',
+                'Tanguay_ZF_120hpf_MORT_up',
+                'Tanguay_ZF_120hpf_OTIC_up',
+                'Tanguay_ZF_120hpf_PE_up',
+                'Tanguay_ZF_120hpf_PFIN_up',
+                'Tanguay_ZF_120hpf_PIG_up',
+                'Tanguay_ZF_120hpf_SNOU_up',
+                'Tanguay_ZF_120hpf_SOMI_up',
+                'Tanguay_ZF_120hpf_SWIM_up',
+                'Tanguay_ZF_120hpf_TRUN_up',
+                'Tanguay_ZF_120hpf_TR_up',
+                'Tanguay_ZF_120hpf_YSE_up'],
+ 'test': False,
+ 'test_fold_index': None,
+ 'train_data_size': None,
+ 'undirected': False,
+ 'use_input_features': False,
+ 'val_fold_index': None,
+ 'warmup_epochs': 2.0}
+Setting molecule featurization parameters to default.
+Loading data
+Warning: 21 SMILES are invalid.
+Number of tasks = 617
+Fold 0
+Splitting data with seed 0
+Class sizes
+ACEA_T47D_80hr_Negative 0: 74.41%, 1: 25.59%
+ACEA_T47D_80hr_Positive 0: 82.84%, 1: 17.16%
+APR_HepG2_CellCycleArrest_24h_dn 0: 83.08%, 1: 16.92%
+APR_HepG2_CellCycleArrest_24h_up 0: 95.84%, 1: 4.16%
+APR_HepG2_CellCycleArrest_72h_dn 0: 76.50%, 1: 23.50%
+APR_HepG2_CellLoss_24h_dn 0: 70.99%, 1: 29.01%
+APR_HepG2_CellLoss_72h_dn 0: 56.96%, 1: 43.04%
+APR_HepG2_MicrotubuleCSK_24h_dn 0: 94.00%, 1: 6.00%
+APR_HepG2_MicrotubuleCSK_24h_up 0: 91.20%, 1: 8.80%
+APR_HepG2_MicrotubuleCSK_72h_dn 0: 93.72%, 1: 6.28%
+APR_HepG2_MicrotubuleCSK_72h_up 0: 88.91%, 1: 11.09%
+APR_HepG2_MitoMass_24h_dn 0: 87.33%, 1: 12.67%
+APR_HepG2_MitoMass_24h_up 0: 97.20%, 1: 2.80%
+APR_HepG2_MitoMass_72h_dn 0: 90.78%, 1: 9.22%
+APR_HepG2_MitoMass_72h_up 0: 92.44%, 1: 7.56%
+APR_HepG2_MitoMembPot_1h_dn 0: 91.75%, 1: 8.25%
+APR_HepG2_MitoMembPot_24h_dn 0: 81.82%, 1: 18.18%
+APR_HepG2_MitoMembPot_72h_dn 0: 86.75%, 1: 13.25%
+APR_HepG2_MitoticArrest_24h_up 0: 79.01%, 1: 20.99%
+APR_HepG2_MitoticArrest_72h_up 0: 72.23%, 1: 27.77%
+APR_HepG2_NuclearSize_24h_dn 0: 94.20%, 1: 5.80%
+APR_HepG2_NuclearSize_72h_dn 0: 95.65%, 1: 4.35%
+APR_HepG2_NuclearSize_72h_up 0: 97.97%, 1: 2.03%
+APR_HepG2_OxidativeStress_24h_up 0: 76.60%, 1: 23.40%
+APR_HepG2_OxidativeStress_72h_up 0: 75.82%, 1: 24.18%
+APR_HepG2_StressKinase_1h_up 0: 93.40%, 1: 6.60%
+APR_HepG2_StressKinase_24h_up 0: 93.04%, 1: 6.96%
+APR_HepG2_StressKinase_72h_up 0: 89.94%, 1: 10.06%
+APR_HepG2_p53Act_24h_up 0: 80.95%, 1: 19.05%
+APR_HepG2_p53Act_72h_up 0: 79.59%, 1: 20.41%
+APR_Hepat_Apoptosis_24hr_up 0: 85.48%, 1: 14.52%
+APR_Hepat_Apoptosis_48hr_up 0: 83.83%, 1: 16.17%
+APR_Hepat_CellLoss_24hr_dn 0: 82.18%, 1: 17.82%
+APR_Hepat_CellLoss_48hr_dn 0: 87.13%, 1: 12.87%
+APR_Hepat_DNADamage_24hr_up 0: 81.85%, 1: 18.15%
+APR_Hepat_DNADamage_48hr_up 0: 80.86%, 1: 19.14%
+APR_Hepat_DNATexture_24hr_up 0: 80.53%, 1: 19.47%
+APR_Hepat_DNATexture_48hr_up 0: 81.85%, 1: 18.15%
+APR_Hepat_MitoFxnI_1hr_dn 0: 81.85%, 1: 18.15%
+APR_Hepat_MitoFxnI_24hr_dn 0: 85.48%, 1: 14.52%
+APR_Hepat_MitoFxnI_48hr_dn 0: 85.81%, 1: 14.19%
+APR_Hepat_NuclearSize_24hr_dn 0: 92.41%, 1: 7.59%
+APR_Hepat_NuclearSize_48hr_dn 0: 89.44%, 1: 10.56%
+APR_Hepat_Steatosis_24hr_up 0: 93.40%, 1: 6.60%
+APR_Hepat_Steatosis_48hr_up 0: 92.74%, 1: 7.26%
+ATG_AP_1_CIS_dn 0: 97.36%, 1: 2.64%
+ATG_AP_1_CIS_up 0: 81.74%, 1: 18.26%
+ATG_AP_2_CIS_dn 0: 93.41%, 1: 6.59%
+ATG_AP_2_CIS_up 0: 98.71%, 1: 1.29%
+ATG_AR_TRANS_dn 0: 99.33%, 1: 0.67%
+ATG_AR_TRANS_up 0: 98.80%, 1: 1.20%
+ATG_Ahr_CIS_dn 0: 93.00%, 1: 7.00%
+ATG_Ahr_CIS_up 0: 86.93%, 1: 13.07%
+ATG_BRE_CIS_dn 0: 97.01%, 1: 2.99%
+ATG_BRE_CIS_up 0: 88.66%, 1: 11.34%
+ATG_CAR_TRANS_dn 0: 97.60%, 1: 2.40%
+ATG_CAR_TRANS_up 0: 98.92%, 1: 1.08%
+ATG_CMV_CIS_dn 0: 95.78%, 1: 4.22%
+ATG_CMV_CIS_up 0: 84.03%, 1: 15.97%
+ATG_CRE_CIS_dn 0: 98.24%, 1: 1.76%
+ATG_CRE_CIS_up 0: 89.42%, 1: 10.58%
+ATG_C_EBP_CIS_dn 0: 97.60%, 1: 2.40%
+ATG_C_EBP_CIS_up 0: 92.70%, 1: 7.30%
+ATG_DR4_LXR_CIS_dn 0: 79.37%, 1: 20.63%
+ATG_DR4_LXR_CIS_up 0: 98.07%, 1: 1.93%
+ATG_DR5_CIS_dn 0: 95.75%, 1: 4.25%
+ATG_DR5_CIS_up 0: 90.45%, 1: 9.55%
+ATG_E2F_CIS_dn 0: 96.04%, 1: 3.96%
+ATG_E2F_CIS_up 0: 99.03%, 1: 0.97%
+ATG_EGR_CIS_up 0: 85.14%, 1: 14.86%
+ATG_ERE_CIS_dn 0: 93.67%, 1: 6.33%
+ATG_ERE_CIS_up 0: 74.33%, 1: 25.67%
+ATG_ERRa_TRANS_dn 0: 98.92%, 1: 1.08%
+ATG_ERRg_TRANS_dn 0: 98.97%, 1: 1.03%
+ATG_ERRg_TRANS_up 0: 99.38%, 1: 0.62%
+ATG_ERa_TRANS_up 0: 78.58%, 1: 21.42%
+ATG_E_Box_CIS_dn 0: 90.01%, 1: 9.99%
+ATG_E_Box_CIS_up 0: 97.57%, 1: 2.43%
+ATG_Ets_CIS_dn 0: 93.35%, 1: 6.65%
+ATG_Ets_CIS_up 0: 99.18%, 1: 0.82%
+ATG_FXR_TRANS_up 0: 97.01%, 1: 2.99%
+ATG_FoxA2_CIS_dn 0: 97.95%, 1: 2.05%
+ATG_FoxA2_CIS_up 0: 97.86%, 1: 2.14%
+ATG_FoxO_CIS_dn 0: 95.13%, 1: 4.87%
+ATG_FoxO_CIS_up 0: 98.45%, 1: 1.55%
+ATG_GAL4_TRANS_dn 0: 97.33%, 1: 2.67%
+ATG_GATA_CIS_dn 0: 96.72%, 1: 3.28%
+ATG_GATA_CIS_up 0: 98.62%, 1: 1.38%
+ATG_GLI_CIS_dn 0: 98.74%, 1: 1.26%
+ATG_GLI_CIS_up 0: 94.37%, 1: 5.63%
+ATG_GRE_CIS_dn 0: 95.57%, 1: 4.43%
+ATG_GRE_CIS_up 0: 98.36%, 1: 1.64%
+ATG_GR_TRANS_dn 0: 99.18%, 1: 0.82%
+ATG_GR_TRANS_up 0: 98.24%, 1: 1.76%
+ATG_HIF1a_CIS_dn 0: 93.29%, 1: 6.71%
+ATG_HIF1a_CIS_up 0: 88.69%, 1: 11.31%
+ATG_HNF4a_TRANS_dn 0: 98.97%, 1: 1.03%
+ATG_HNF4a_TRANS_up 0: 98.53%, 1: 1.47%
+ATG_HNF6_CIS_dn 0: 96.19%, 1: 3.81%
+ATG_HNF6_CIS_up 0: 98.04%, 1: 1.96%
+ATG_HSE_CIS_dn 0: 98.36%, 1: 1.64%
+ATG_HSE_CIS_up 0: 87.57%, 1: 12.43%
+ATG_IR1_CIS_dn 0: 89.92%, 1: 10.08%
+ATG_IR1_CIS_up 0: 97.30%, 1: 2.70%
+ATG_ISRE_CIS_dn 0: 86.11%, 1: 13.89%
+ATG_ISRE_CIS_up 0: 99.27%, 1: 0.73%
+ATG_LXRa_TRANS_dn 0: 98.12%, 1: 1.88%
+ATG_LXRa_TRANS_up 0: 97.01%, 1: 2.99%
+ATG_LXRb_TRANS_dn 0: 99.24%, 1: 0.76%
+ATG_LXRb_TRANS_up 0: 97.77%, 1: 2.23%
+ATG_MRE_CIS_up 0: 78.78%, 1: 21.22%
+ATG_M_06_TRANS_up 0: 99.33%, 1: 0.67%
+ATG_M_19_CIS_dn 0: 97.51%, 1: 2.49%
+ATG_M_19_TRANS_dn 0: 98.07%, 1: 1.93%
+ATG_M_19_TRANS_up 0: 98.92%, 1: 1.08%
+ATG_M_32_CIS_dn 0: 98.27%, 1: 1.73%
+ATG_M_32_CIS_up 0: 98.45%, 1: 1.55%
+ATG_M_32_TRANS_dn 0: 98.24%, 1: 1.76%
+ATG_M_32_TRANS_up 0: 99.12%, 1: 0.88%
+ATG_M_61_TRANS_up 0: 99.36%, 1: 0.64%
+ATG_Myb_CIS_dn 0: 96.37%, 1: 3.63%
+ATG_Myb_CIS_up 0: 98.48%, 1: 1.52%
+ATG_Myc_CIS_dn 0: 98.51%, 1: 1.49%
+ATG_Myc_CIS_up 0: 94.43%, 1: 5.57%
+ATG_NFI_CIS_dn 0: 98.30%, 1: 1.70%
+ATG_NFI_CIS_up 0: 91.91%, 1: 8.09%
+ATG_NF_kB_CIS_dn 0: 91.79%, 1: 8.21%
+ATG_NF_kB_CIS_up 0: 95.93%, 1: 4.07%
+ATG_NRF1_CIS_dn 0: 95.40%, 1: 4.60%
+ATG_NRF1_CIS_up 0: 96.95%, 1: 3.05%
+ATG_NRF2_ARE_CIS_dn 0: 98.36%, 1: 1.64%
+ATG_NRF2_ARE_CIS_up 0: 62.08%, 1: 37.92%
+ATG_NURR1_TRANS_dn 0: 99.09%, 1: 0.91%
+ATG_NURR1_TRANS_up 0: 93.73%, 1: 6.27%
+ATG_Oct_MLP_CIS_dn 0: 98.92%, 1: 1.08%
+ATG_Oct_MLP_CIS_up 0: 83.76%, 1: 16.24%
+ATG_PBREM_CIS_dn 0: 99.09%, 1: 0.91%
+ATG_PBREM_CIS_up 0: 88.45%, 1: 11.55%
+ATG_PPARa_TRANS_dn 0: 98.89%, 1: 1.11%
+ATG_PPARa_TRANS_up 0: 93.00%, 1: 7.00%
+ATG_PPARd_TRANS_up 0: 97.89%, 1: 2.11%
+ATG_PPARg_TRANS_up 0: 72.66%, 1: 27.34%
+ATG_PPRE_CIS_dn 0: 97.27%, 1: 2.73%
+ATG_PPRE_CIS_up 0: 84.38%, 1: 15.62%
+ATG_PXRE_CIS_dn 0: 90.24%, 1: 9.76%
+ATG_PXRE_CIS_up 0: 51.79%, 1: 48.21%
+ATG_PXR_TRANS_dn 0: 99.33%, 1: 0.67%
+ATG_PXR_TRANS_up 0: 71.54%, 1: 28.46%
+ATG_Pax6_CIS_up 0: 86.52%, 1: 13.48%
+ATG_RARa_TRANS_dn 0: 92.76%, 1: 7.24%
+ATG_RARa_TRANS_up 0: 97.71%, 1: 2.29%
+ATG_RARb_TRANS_dn 0: 95.96%, 1: 4.04%
+ATG_RARb_TRANS_up 0: 99.27%, 1: 0.73%
+ATG_RARg_TRANS_dn 0: 98.07%, 1: 1.93%
+ATG_RARg_TRANS_up 0: 98.33%, 1: 1.67%
+ATG_RORE_CIS_dn 0: 99.12%, 1: 0.88%
+ATG_RORE_CIS_up 0: 88.92%, 1: 11.08%
+ATG_RORb_TRANS_dn 0: 98.39%, 1: 1.61%
+ATG_RORg_TRANS_dn 0: 99.12%, 1: 0.88%
+ATG_RORg_TRANS_up 0: 98.94%, 1: 1.06%
+ATG_RXRa_TRANS_dn 0: 99.30%, 1: 0.70%
+ATG_RXRa_TRANS_up 0: 96.81%, 1: 3.19%
+ATG_RXRb_TRANS_dn 0: 97.10%, 1: 2.90%
+ATG_RXRb_TRANS_up 0: 84.55%, 1: 15.45%
+ATG_SREBP_CIS_dn 0: 98.71%, 1: 1.29%
+ATG_SREBP_CIS_up 0: 84.38%, 1: 15.62%
+ATG_STAT3_CIS_dn 0: 97.07%, 1: 2.93%
+ATG_STAT3_CIS_up 0: 98.77%, 1: 1.23%
+ATG_Sox_CIS_dn 0: 99.03%, 1: 0.97%
+ATG_Sox_CIS_up 0: 93.41%, 1: 6.59%
+ATG_Sp1_CIS_dn 0: 98.97%, 1: 1.03%
+ATG_Sp1_CIS_up 0: 89.68%, 1: 10.32%
+ATG_TAL_CIS_dn 0: 98.07%, 1: 1.93%
+ATG_TAL_CIS_up 0: 96.40%, 1: 3.60%
+ATG_TA_CIS_dn 0: 99.15%, 1: 0.85%
+ATG_TA_CIS_up 0: 93.05%, 1: 6.95%
+ATG_TCF_b_cat_CIS_dn 0: 86.43%, 1: 13.57%
+ATG_TCF_b_cat_CIS_up 0: 98.80%, 1: 1.20%
+ATG_TGFb_CIS_dn 0: 96.37%, 1: 3.63%
+ATG_TGFb_CIS_up 0: 95.96%, 1: 4.04%
+ATG_THRa1_TRANS_dn 0: 98.86%, 1: 1.14%
+ATG_THRa1_TRANS_up 0: 96.72%, 1: 3.28%
+ATG_VDRE_CIS_dn 0: 99.41%, 1: 0.59%
+ATG_VDRE_CIS_up 0: 72.71%, 1: 27.29%
+ATG_VDR_TRANS_dn 0: 99.27%, 1: 0.73%
+ATG_VDR_TRANS_up 0: 98.53%, 1: 1.47%
+ATG_XTT_Cytotoxicity_up 0: 91.25%, 1: 8.75%
+ATG_Xbp1_CIS_dn 0: 99.12%, 1: 0.88%
+ATG_Xbp1_CIS_up 0: 86.49%, 1: 13.51%
+ATG_p53_CIS_dn 0: 90.04%, 1: 9.96%
+ATG_p53_CIS_up 0: 97.42%, 1: 2.58%
+BSK_3C_Eselectin_down 0: 72.13%, 1: 27.87%
+BSK_3C_HLADR_down 0: 61.64%, 1: 38.36%
+BSK_3C_ICAM1_down 0: 85.75%, 1: 14.25%
+BSK_3C_IL8_down 0: 77.07%, 1: 22.93%
+BSK_3C_MCP1_down 0: 73.52%, 1: 26.48%
+BSK_3C_MIG_down 0: 86.73%, 1: 13.27%
+BSK_3C_Proliferation_down 0: 58.30%, 1: 41.70%
+BSK_3C_SRB_down 0: 66.85%, 1: 33.15%
+BSK_3C_Thrombomodulin_down 0: 95.69%, 1: 4.31%
+BSK_3C_Thrombomodulin_up 0: 90.34%, 1: 9.66%
+BSK_3C_TissueFactor_down 0: 77.69%, 1: 22.31%
+BSK_3C_TissueFactor_up 0: 95.83%, 1: 4.17%
+BSK_3C_VCAM1_down 0: 75.40%, 1: 24.60%
+BSK_3C_Vis_down 0: 69.70%, 1: 30.30%
+BSK_3C_uPAR_down 0: 70.95%, 1: 29.05%
+BSK_4H_Eotaxin3_down 0: 69.49%, 1: 30.51%
+BSK_4H_MCP1_down 0: 73.38%, 1: 26.62%
+BSK_4H_Pselectin_down 0: 72.06%, 1: 27.94%
+BSK_4H_Pselectin_up 0: 98.47%, 1: 1.53%
+BSK_4H_SRB_down 0: 72.76%, 1: 27.24%
+BSK_4H_VCAM1_down 0: 70.47%, 1: 29.53%
+BSK_4H_VEGFRII_down 0: 84.99%, 1: 15.01%
+BSK_4H_uPAR_down 0: 75.89%, 1: 24.11%
+BSK_4H_uPAR_up 0: 98.54%, 1: 1.46%
+BSK_BE3C_HLADR_down 0: 73.11%, 1: 26.89%
+BSK_BE3C_IL1a_down 0: 81.17%, 1: 18.83%
+BSK_BE3C_IP10_down 0: 73.31%, 1: 26.69%
+BSK_BE3C_MIG_down 0: 86.66%, 1: 13.34%
+BSK_BE3C_MMP1_down 0: 86.73%, 1: 13.27%
+BSK_BE3C_MMP1_up 0: 90.90%, 1: 9.10%
+BSK_BE3C_PAI1_down 0: 79.57%, 1: 20.43%
+BSK_BE3C_SRB_down 0: 85.48%, 1: 14.52%
+BSK_BE3C_TGFb1_down 0: 84.02%, 1: 15.98%
+BSK_BE3C_tPA_down 0: 82.90%, 1: 17.10%
+BSK_BE3C_uPAR_down 0: 86.03%, 1: 13.97%
+BSK_BE3C_uPAR_up 0: 97.29%, 1: 2.71%
+BSK_BE3C_uPA_down 0: 83.32%, 1: 16.68%
+BSK_CASM3C_HLADR_down 0: 79.78%, 1: 20.22%
+BSK_CASM3C_IL6_down 0: 85.41%, 1: 14.59%
+BSK_CASM3C_IL6_up 0: 96.66%, 1: 3.34%
+BSK_CASM3C_IL8_down 0: 89.85%, 1: 10.15%
+BSK_CASM3C_LDLR_down 0: 88.60%, 1: 11.40%
+BSK_CASM3C_LDLR_up 0: 94.23%, 1: 5.77%
+BSK_CASM3C_MCP1_down 0: 85.13%, 1: 14.87%
+BSK_CASM3C_MCP1_up 0: 97.78%, 1: 2.22%
+BSK_CASM3C_MCSF_down 0: 81.58%, 1: 18.42%
+BSK_CASM3C_MCSF_up 0: 98.47%, 1: 1.53%
+BSK_CASM3C_MIG_down 0: 89.02%, 1: 10.98%
+BSK_CASM3C_Proliferation_down 0: 69.15%, 1: 30.85%
+BSK_CASM3C_Proliferation_up 0: 98.05%, 1: 1.95%
+BSK_CASM3C_SAA_down 0: 87.63%, 1: 12.37%
+BSK_CASM3C_SAA_up 0: 97.57%, 1: 2.43%
+BSK_CASM3C_SRB_down 0: 82.49%, 1: 17.51%
+BSK_CASM3C_Thrombomodulin_down 0: 94.86%, 1: 5.14%
+BSK_CASM3C_Thrombomodulin_up 0: 82.49%, 1: 17.51%
+BSK_CASM3C_TissueFactor_down 0: 84.64%, 1: 15.36%
+BSK_CASM3C_VCAM1_down 0: 80.19%, 1: 19.81%
+BSK_CASM3C_VCAM1_up 0: 97.36%, 1: 2.64%
+BSK_CASM3C_uPAR_down 0: 82.84%, 1: 17.16%
+BSK_CASM3C_uPAR_up 0: 98.40%, 1: 1.60%
+BSK_KF3CT_ICAM1_down 0: 84.23%, 1: 15.77%
+BSK_KF3CT_IL1a_down 0: 79.29%, 1: 20.71%
+BSK_KF3CT_IP10_down 0: 77.48%, 1: 22.52%
+BSK_KF3CT_IP10_up 0: 98.33%, 1: 1.67%
+BSK_KF3CT_MCP1_down 0: 82.00%, 1: 18.00%
+BSK_KF3CT_MCP1_up 0: 98.26%, 1: 1.74%
+BSK_KF3CT_MMP9_down 0: 72.90%, 1: 27.10%
+BSK_KF3CT_SRB_down 0: 83.74%, 1: 16.26%
+BSK_KF3CT_TGFb1_down 0: 79.57%, 1: 20.43%
+BSK_KF3CT_TIMP2_down 0: 77.41%, 1: 22.59%
+BSK_KF3CT_uPA_down 0: 81.45%, 1: 18.55%
+BSK_LPS_CD40_down 0: 70.54%, 1: 29.46%
+BSK_LPS_Eselectin_down 0: 78.67%, 1: 21.33%
+BSK_LPS_Eselectin_up 0: 98.47%, 1: 1.53%
+BSK_LPS_IL1a_down 0: 78.53%, 1: 21.47%
+BSK_LPS_IL1a_up 0: 98.54%, 1: 1.46%
+BSK_LPS_IL8_down 0: 77.76%, 1: 22.24%
+BSK_LPS_IL8_up 0: 97.92%, 1: 2.08%
+BSK_LPS_MCP1_down 0: 77.41%, 1: 22.59%
+BSK_LPS_MCSF_down 0: 72.48%, 1: 27.52%
+BSK_LPS_PGE2_down 0: 79.29%, 1: 20.71%
+BSK_LPS_PGE2_up 0: 93.33%, 1: 6.67%
+BSK_LPS_SRB_down 0: 74.08%, 1: 25.92%
+BSK_LPS_TNFa_down 0: 79.57%, 1: 20.43%
+BSK_LPS_TNFa_up 0: 94.79%, 1: 5.21%
+BSK_LPS_TissueFactor_down 0: 83.53%, 1: 16.47%
+BSK_LPS_TissueFactor_up 0: 96.18%, 1: 3.82%
+BSK_LPS_VCAM1_down 0: 69.42%, 1: 30.58%
+BSK_SAg_CD38_down 0: 69.28%, 1: 30.72%
+BSK_SAg_CD40_down 0: 69.21%, 1: 30.79%
+BSK_SAg_CD69_down 0: 71.99%, 1: 28.01%
+BSK_SAg_Eselectin_down 0: 71.58%, 1: 28.42%
+BSK_SAg_Eselectin_up 0: 96.80%, 1: 3.20%
+BSK_SAg_IL8_down 0: 75.89%, 1: 24.11%
+BSK_SAg_IL8_up 0: 97.01%, 1: 2.99%
+BSK_SAg_MCP1_down 0: 75.82%, 1: 24.18%
+BSK_SAg_MIG_down 0: 83.81%, 1: 16.19%
+BSK_SAg_PBMCCytotoxicity_down 0: 77.62%, 1: 22.38%
+BSK_SAg_PBMCCytotoxicity_up 0: 94.79%, 1: 5.21%
+BSK_SAg_Proliferation_down 0: 60.88%, 1: 39.12%
+BSK_SAg_SRB_down 0: 74.84%, 1: 25.16%
+BSK_hDFCGF_CollagenIII_down 0: 69.56%, 1: 30.44%
+BSK_hDFCGF_EGFR_down 0: 93.19%, 1: 6.81%
+BSK_hDFCGF_EGFR_up 0: 95.62%, 1: 4.38%
+BSK_hDFCGF_IL8_down 0: 86.59%, 1: 13.41%
+BSK_hDFCGF_IP10_down 0: 70.81%, 1: 29.19%
+BSK_hDFCGF_MCSF_down 0: 71.02%, 1: 28.98%
+BSK_hDFCGF_MIG_down 0: 79.43%, 1: 20.57%
+BSK_hDFCGF_MMP1_down 0: 81.51%, 1: 18.49%
+BSK_hDFCGF_MMP1_up 0: 95.62%, 1: 4.38%
+BSK_hDFCGF_PAI1_down 0: 72.48%, 1: 27.52%
+BSK_hDFCGF_Proliferation_down 0: 56.64%, 1: 43.36%
+BSK_hDFCGF_SRB_down 0: 76.93%, 1: 23.07%
+BSK_hDFCGF_TIMP1_down 0: 81.31%, 1: 18.69%
+BSK_hDFCGF_VCAM1_down 0: 71.37%, 1: 28.63%
+CEETOX_H295R_11DCORT_dn 0: 59.36%, 1: 40.64%
+CEETOX_H295R_ANDR_dn 0: 62.75%, 1: 37.25%
+CEETOX_H295R_CORTISOL_dn 0: 73.11%, 1: 26.89%
+CEETOX_H295R_DOC_dn 0: 73.19%, 1: 26.81%
+CEETOX_H295R_DOC_up 0: 84.88%, 1: 15.12%
+CEETOX_H295R_ESTRADIOL_dn 0: 92.80%, 1: 7.20%
+CEETOX_H295R_ESTRADIOL_up 0: 84.40%, 1: 15.60%
+CEETOX_H295R_ESTRONE_dn 0: 90.24%, 1: 9.76%
+CEETOX_H295R_ESTRONE_up 0: 85.66%, 1: 14.34%
+CEETOX_H295R_OHPREG_up 0: 87.88%, 1: 12.12%
+CEETOX_H295R_OHPROG_dn 0: 69.80%, 1: 30.20%
+CEETOX_H295R_OHPROG_up 0: 76.20%, 1: 23.80%
+CEETOX_H295R_PROG_up 0: 73.77%, 1: 26.23%
+CEETOX_H295R_TESTO_dn 0: 71.00%, 1: 29.00%
+CLD_ABCB1_48hr 0: 93.67%, 1: 6.33%
+CLD_ABCG2_48hr 0: 92.33%, 1: 7.67%
+CLD_CYP1A1_24hr 0: 59.12%, 1: 40.88%
+CLD_CYP1A1_48hr 0: 62.71%, 1: 37.29%
+CLD_CYP1A1_6hr 0: 65.56%, 1: 34.44%
+CLD_CYP1A2_24hr 0: 55.63%, 1: 44.37%
+CLD_CYP1A2_48hr 0: 49.00%, 1: 51.00%
+CLD_CYP1A2_6hr 0: 72.19%, 1: 27.81%
+CLD_CYP2B6_24hr 0: 42.81%, 1: 57.19%
+CLD_CYP2B6_48hr 0: 46.00%, 1: 54.00%
+CLD_CYP2B6_6hr 0: 39.74%, 1: 60.26%
+CLD_CYP3A4_24hr 0: 60.96%, 1: 39.04%
+CLD_CYP3A4_48hr 0: 60.54%, 1: 39.46%
+CLD_CYP3A4_6hr 0: 84.80%, 1: 15.20%
+CLD_GSTA2_48hr 0: 90.33%, 1: 9.67%
+CLD_SULT2A_24hr 0: 91.64%, 1: 8.36%
+CLD_SULT2A_48hr 0: 86.00%, 1: 14.00%
+CLD_UGT1A1_24hr 0: 83.11%, 1: 16.89%
+CLD_UGT1A1_48hr 0: 78.00%, 1: 22.00%
+NCCT_HEK293T_CellTiterGLO 0: 46.11%, 1: 53.89%
+NCCT_QuantiLum_inhib_2_dn 0: 73.46%, 1: 26.54%
+NCCT_QuantiLum_inhib_dn 0: 44.65%, 1: 55.35%
+NCCT_TPO_AUR_dn 0: 17.69%, 1: 82.31%
+NCCT_TPO_GUA_dn 0: 41.51%, 1: 58.49%
+NHEERL_ZF_144hpf_TERATOSCORE_up 0: 31.29%, 1: 68.71%
+NVS_ADME_hCYP19A1 0: 70.29%, 1: 29.71%
+NVS_ADME_hCYP1A1 0: 60.00%, 1: 40.00%
+NVS_ADME_hCYP1A2 0: 22.54%, 1: 77.46%
+NVS_ADME_hCYP2A6 0: 76.11%, 1: 23.89%
+NVS_ADME_hCYP2B6 0: 25.74%, 1: 74.26%
+NVS_ADME_hCYP2C19 0: 20.16%, 1: 79.84%
+NVS_ADME_hCYP2C9 0: 16.89%, 1: 83.11%
+NVS_ADME_hCYP2D6 0: 31.62%, 1: 68.38%
+NVS_ADME_hCYP3A4 0: 46.88%, 1: 53.12%
+NVS_ADME_hCYP4F12 0: 63.64%, 1: 36.36%
+NVS_ADME_rCYP2C12 0: 42.59%, 1: 57.41%
+NVS_ENZ_hAChE 0: 52.11%, 1: 47.89%
+NVS_ENZ_hAMPKa1 0: 81.08%, 1: 18.92%
+NVS_ENZ_hAurA 0: 75.79%, 1: 24.21%
+NVS_ENZ_hBACE 0: 47.06%, 1: 52.94%
+NVS_ENZ_hCASP5 0: 53.16%, 1: 46.84%
+NVS_ENZ_hCK1D 0: 76.15%, 1: 23.85%
+NVS_ENZ_hDUSP3 0: 41.75%, 1: 58.25%
+NVS_ENZ_hES 0: 49.69%, 1: 50.31%
+NVS_ENZ_hElastase 0: 52.21%, 1: 47.79%
+NVS_ENZ_hFGFR1 0: 81.82%, 1: 18.18%
+NVS_ENZ_hGSK3b 0: 89.09%, 1: 10.91%
+NVS_ENZ_hMMP1 0: 55.56%, 1: 44.44%
+NVS_ENZ_hMMP13 0: 45.12%, 1: 54.88%
+NVS_ENZ_hMMP2 0: 61.11%, 1: 38.89%
+NVS_ENZ_hMMP3 0: 67.31%, 1: 32.69%
+NVS_ENZ_hMMP7 0: 76.34%, 1: 23.66%
+NVS_ENZ_hMMP9 0: 59.79%, 1: 40.21%
+NVS_ENZ_hPDE10 0: 67.09%, 1: 32.91%
+NVS_ENZ_hPDE4A1 0: 57.97%, 1: 42.03%
+NVS_ENZ_hPDE5 0: 62.22%, 1: 37.78%
+NVS_ENZ_hPI3Ka 0: 82.14%, 1: 17.86%
+NVS_ENZ_hPTEN 0: 67.71%, 1: 32.29%
+NVS_ENZ_hPTPN11 0: 72.41%, 1: 27.59%
+NVS_ENZ_hPTPN12 0: 68.35%, 1: 31.65%
+NVS_ENZ_hPTPN13 0: 68.00%, 1: 32.00%
+NVS_ENZ_hPTPN9 0: 70.37%, 1: 29.63%
+NVS_ENZ_hPTPRC 0: 43.28%, 1: 56.72%
+NVS_ENZ_hSIRT1 0: 77.19%, 1: 22.81%
+NVS_ENZ_hSIRT2 0: 70.41%, 1: 29.59%
+NVS_ENZ_hTrkA 0: 66.67%, 1: 33.33%
+NVS_ENZ_hVEGFR2 0: 84.42%, 1: 15.58%
+NVS_ENZ_oCOX1 0: 40.00%, 1: 60.00%
+NVS_ENZ_oCOX2 0: 40.78%, 1: 59.22%
+NVS_ENZ_rAChE 0: 50.51%, 1: 49.49%
+NVS_ENZ_rCNOS 0: 58.95%, 1: 41.05%
+NVS_ENZ_rMAOAC 0: 26.96%, 1: 73.04%
+NVS_ENZ_rMAOAP 0: 39.62%, 1: 60.38%
+NVS_ENZ_rMAOBC 0: 44.53%, 1: 55.47%
+NVS_ENZ_rMAOBP 0: 57.58%, 1: 42.42%
+NVS_ENZ_rabI2C 0: 49.06%, 1: 50.94%
+NVS_GPCR_bAdoR_NonSelective 0: 66.07%, 1: 33.93%
+NVS_GPCR_bDR_NonSelective 0: 41.82%, 1: 58.18%
+NVS_GPCR_g5HT4 0: 37.04%, 1: 62.96%
+NVS_GPCR_gH2 0: 35.83%, 1: 64.17%
+NVS_GPCR_gLTB4 0: 40.45%, 1: 59.55%
+NVS_GPCR_gLTD4 0: 56.92%, 1: 43.08%
+NVS_GPCR_gMPeripheral_NonSelective 0: 44.12%, 1: 55.88%
+NVS_GPCR_gOpiateK 0: 36.99%, 1: 63.01%
+NVS_GPCR_h5HT2A 0: 56.88%, 1: 43.12%
+NVS_GPCR_h5HT5A 0: 42.58%, 1: 57.42%
+NVS_GPCR_h5HT6 0: 35.00%, 1: 65.00%
+NVS_GPCR_h5HT7 0: 25.00%, 1: 75.00%
+NVS_GPCR_hAT1 0: 68.66%, 1: 31.34%
+NVS_GPCR_hAdoRA1 0: 28.81%, 1: 71.19%
+NVS_GPCR_hAdoRA2a 0: 23.26%, 1: 76.74%
+NVS_GPCR_hAdra2A 0: 32.97%, 1: 67.03%
+NVS_GPCR_hAdra2C 0: 27.68%, 1: 72.32%
+NVS_GPCR_hAdrb1 0: 40.00%, 1: 60.00%
+NVS_GPCR_hAdrb2 0: 48.72%, 1: 51.28%
+NVS_GPCR_hAdrb3 0: 70.93%, 1: 29.07%
+NVS_GPCR_hDRD1 0: 24.62%, 1: 75.38%
+NVS_GPCR_hDRD2s 0: 42.40%, 1: 57.60%
+NVS_GPCR_hDRD4.4 0: 26.92%, 1: 73.08%
+NVS_GPCR_hH1 0: 36.67%, 1: 63.33%
+NVS_GPCR_hLTB4_BLT1 0: 69.01%, 1: 30.99%
+NVS_GPCR_hM1 0: 31.33%, 1: 68.67%
+NVS_GPCR_hM2 0: 36.44%, 1: 63.56%
+NVS_GPCR_hM3 0: 31.37%, 1: 68.63%
+NVS_GPCR_hM4 0: 37.69%, 1: 62.31%
+NVS_GPCR_hNK2 0: 51.83%, 1: 48.17%
+NVS_GPCR_hOpiate_D1 0: 43.93%, 1: 56.07%
+NVS_GPCR_hOpiate_mu 0: 39.68%, 1: 60.32%
+NVS_GPCR_hTXA2 0: 35.79%, 1: 64.21%
+NVS_GPCR_p5HT2C 0: 36.94%, 1: 63.06%
+NVS_GPCR_r5HT1_NonSelective 0: 59.72%, 1: 40.28%
+NVS_GPCR_r5HT_NonSelective 0: 47.83%, 1: 52.17%
+NVS_GPCR_rAdra1B 0: 44.57%, 1: 55.43%
+NVS_GPCR_rAdra1_NonSelective 0: 43.01%, 1: 56.99%
+NVS_GPCR_rAdra2_NonSelective 0: 32.05%, 1: 67.95%
+NVS_GPCR_rAdrb_NonSelective 0: 64.62%, 1: 35.38%
+NVS_GPCR_rNK1 0: 58.93%, 1: 41.07%
+NVS_GPCR_rNK3 0: 67.06%, 1: 32.94%
+NVS_GPCR_rOpiate_NonSelective 0: 44.19%, 1: 55.81%
+NVS_GPCR_rOpiate_NonSelectiveNa 0: 46.72%, 1: 53.28%
+NVS_GPCR_rSST 0: 51.43%, 1: 48.57%
+NVS_GPCR_rTRH 0: 96.82%, 1: 3.18%
+NVS_GPCR_rV1 0: 45.45%, 1: 54.55%
+NVS_GPCR_rabPAF 0: 41.41%, 1: 58.59%
+NVS_GPCR_rmAdra2B 0: 25.24%, 1: 74.76%
+NVS_IC_hKhERGCh 0: 56.04%, 1: 43.96%
+NVS_IC_rCaBTZCHL 0: 30.39%, 1: 69.61%
+NVS_IC_rCaDHPRCh_L 0: 39.33%, 1: 60.67%
+NVS_IC_rNaCh_site2 0: 25.95%, 1: 74.05%
+NVS_LGIC_bGABARa1 0: 62.69%, 1: 37.31%
+NVS_LGIC_h5HT3 0: 65.15%, 1: 34.85%
+NVS_LGIC_hNNR_NBungSens 0: 48.00%, 1: 52.00%
+NVS_LGIC_rGABAR_NonSelective 0: 59.68%, 1: 40.32%
+NVS_LGIC_rNNR_BungSens 0: 63.10%, 1: 36.90%
+NVS_MP_hPBR 0: 37.93%, 1: 62.07%
+NVS_MP_rPBR 0: 34.53%, 1: 65.47%
+NVS_NR_bER 0: 87.67%, 1: 12.33%
+NVS_NR_bPR 0: 58.38%, 1: 41.62%
+NVS_NR_cAR 0: 32.24%, 1: 67.76%
+NVS_NR_hAR 0: 50.88%, 1: 49.12%
+NVS_NR_hCAR_Antagonist 0: 70.04%, 1: 29.96%
+NVS_NR_hER 0: 79.43%, 1: 20.57%
+NVS_NR_hFXR_Agonist 0: 79.88%, 1: 20.12%
+NVS_NR_hFXR_Antagonist 0: 76.65%, 1: 23.35%
+NVS_NR_hGR 0: 34.49%, 1: 65.51%
+NVS_NR_hPPARa 0: 80.85%, 1: 19.15%
+NVS_NR_hPPARg 0: 76.92%, 1: 23.08%
+NVS_NR_hPR 0: 69.04%, 1: 30.96%
+NVS_NR_hPXR 0: 78.40%, 1: 21.60%
+NVS_NR_hRAR_Antagonist 0: 88.46%, 1: 11.54%
+NVS_NR_hRARa_Agonist 0: 86.75%, 1: 13.25%
+NVS_NR_hTRa_Antagonist 0: 75.34%, 1: 24.66%
+NVS_NR_mERa 0: 79.74%, 1: 20.26%
+NVS_NR_rAR 0: 51.48%, 1: 48.52%
+NVS_NR_rMR 0: 78.35%, 1: 21.65%
+NVS_OR_gSIGMA_NonSelective 0: 26.21%, 1: 73.79%
+NVS_TR_gDAT 0: 28.90%, 1: 71.10%
+NVS_TR_hAdoT 0: 33.77%, 1: 66.23%
+NVS_TR_hDAT 0: 20.16%, 1: 79.84%
+NVS_TR_hNET 0: 29.69%, 1: 70.31%
+NVS_TR_hSERT 0: 62.14%, 1: 37.86%
+NVS_TR_rNET 0: 50.00%, 1: 50.00%
+NVS_TR_rSERT 0: 46.02%, 1: 53.98%
+NVS_TR_rVMAT2 0: 50.98%, 1: 49.02%
+OT_AR_ARELUC_AG_1440 0: 91.82%, 1: 8.18%
+OT_AR_ARSRC1_0480 0: 93.16%, 1: 6.84%
+OT_AR_ARSRC1_0960 0: 88.00%, 1: 12.00%
+OT_ER_ERaERa_0480 0: 92.33%, 1: 7.67%
+OT_ER_ERaERa_1440 0: 93.55%, 1: 6.45%
+OT_ER_ERaERb_0480 0: 87.52%, 1: 12.48%
+OT_ER_ERaERb_1440 0: 88.07%, 1: 11.93%
+OT_ER_ERbERb_0480 0: 88.07%, 1: 11.93%
+OT_ER_ERbERb_1440 0: 89.32%, 1: 10.68%
+OT_ERa_EREGFP_0120 0: 89.67%, 1: 10.33%
+OT_ERa_EREGFP_0480 0: 91.58%, 1: 8.42%
+OT_FXR_FXRSRC1_0480 0: 81.79%, 1: 18.21%
+OT_FXR_FXRSRC1_1440 0: 91.62%, 1: 8.38%
+OT_NURR1_NURR1RXRa_0480 0: 88.34%, 1: 11.66%
+OT_NURR1_NURR1RXRa_1440 0: 94.88%, 1: 5.12%
+TOX21_ARE_BLA_Agonist_ch1 0: 94.87%, 1: 5.13%
+TOX21_ARE_BLA_Agonist_ch2 0: 91.12%, 1: 8.88%
+TOX21_ARE_BLA_agonist_ratio 0: 77.54%, 1: 22.46%
+TOX21_ARE_BLA_agonist_viability 0: 98.80%, 1: 1.20%
+TOX21_AR_BLA_Agonist_ch1 0: 99.70%, 1: 0.30%
+TOX21_AR_BLA_Agonist_ch2 0: 95.11%, 1: 4.89%
+TOX21_AR_BLA_Agonist_ratio 0: 94.83%, 1: 5.17%
+TOX21_AR_BLA_Antagonist_ch1 0: 99.47%, 1: 0.53%
+TOX21_AR_BLA_Antagonist_ch2 0: 97.43%, 1: 2.57%
+TOX21_AR_BLA_Antagonist_ratio 0: 85.18%, 1: 14.82%
+TOX21_AR_BLA_Antagonist_viability 0: 92.45%, 1: 7.55%
+TOX21_AR_LUC_MDAKB2_Agonist 0: 95.15%, 1: 4.85%
+TOX21_AR_LUC_MDAKB2_Antagonist 0: 89.28%, 1: 10.72%
+TOX21_AR_LUC_MDAKB2_Antagonist2 0: 83.75%, 1: 16.25%
+TOX21_AhR_LUC_Agonist 0: 89.81%, 1: 10.19%
+TOX21_Aromatase_Inhibition 0: 83.95%, 1: 16.05%
+TOX21_AutoFluor_HEK293_Cell_blue 0: 99.37%, 1: 0.63%
+TOX21_AutoFluor_HEK293_Media_blue 0: 99.34%, 1: 0.66%
+TOX21_AutoFluor_HEPG2_Cell_blue 0: 99.36%, 1: 0.64%
+TOX21_AutoFluor_HEPG2_Cell_green 0: 99.70%, 1: 0.30%
+TOX21_AutoFluor_HEPG2_Media_blue 0: 99.38%, 1: 0.62%
+TOX21_AutoFluor_HEPG2_Media_green 0: 99.71%, 1: 0.29%
+TOX21_ELG1_LUC_Agonist 0: 97.46%, 1: 2.54%
+TOX21_ERa_BLA_Agonist_ch1 0: 96.26%, 1: 3.74%
+TOX21_ERa_BLA_Agonist_ch2 0: 94.10%, 1: 5.90%
+TOX21_ERa_BLA_Agonist_ratio 0: 94.07%, 1: 5.93%
+TOX21_ERa_BLA_Antagonist_ch1 0: 96.22%, 1: 3.78%
+TOX21_ERa_BLA_Antagonist_ch2 0: 96.77%, 1: 3.23%
+TOX21_ERa_BLA_Antagonist_ratio 0: 87.01%, 1: 12.99%
+TOX21_ERa_BLA_Antagonist_viability 0: 97.48%, 1: 2.52%
+TOX21_ERa_LUC_BG1_Agonist 0: 84.16%, 1: 15.84%
+TOX21_ERa_LUC_BG1_Antagonist 0: 90.98%, 1: 9.02%
+TOX21_ESRE_BLA_ch1 0: 98.69%, 1: 1.31%
+TOX21_ESRE_BLA_ch2 0: 98.47%, 1: 1.53%
+TOX21_ESRE_BLA_ratio 0: 95.37%, 1: 4.63%
+TOX21_ESRE_BLA_viability 0: 96.76%, 1: 3.24%
+TOX21_FXR_BLA_Antagonist_ch1 0: 94.99%, 1: 5.01%
+TOX21_FXR_BLA_Antagonist_ch2 0: 96.01%, 1: 3.99%
+TOX21_FXR_BLA_agonist_ch2 0: 97.44%, 1: 2.56%
+TOX21_FXR_BLA_agonist_ratio 0: 97.12%, 1: 2.88%
+TOX21_FXR_BLA_antagonist_ratio 0: 86.70%, 1: 13.30%
+TOX21_FXR_BLA_antagonist_viability 0: 95.37%, 1: 4.63%
+TOX21_GR_BLA_Agonist_ch1 0: 95.84%, 1: 4.16%
+TOX21_GR_BLA_Agonist_ch2 0: 97.11%, 1: 2.89%
+TOX21_GR_BLA_Agonist_ratio 0: 93.67%, 1: 6.33%
+TOX21_GR_BLA_Antagonist_ch2 0: 93.23%, 1: 6.77%
+TOX21_GR_BLA_Antagonist_ratio 0: 94.23%, 1: 5.77%
+TOX21_GR_BLA_Antagonist_viability 0: 94.96%, 1: 5.04%
+TOX21_HSE_BLA_agonist_ch1 0: 95.90%, 1: 4.10%
+TOX21_HSE_BLA_agonist_ch2 0: 94.81%, 1: 5.19%
+TOX21_HSE_BLA_agonist_ratio 0: 91.51%, 1: 8.49%
+TOX21_HSE_BLA_agonist_viability 0: 97.65%, 1: 2.35%
+TOX21_MMP_ratio_down 0: 83.76%, 1: 16.24%
+TOX21_MMP_ratio_up 0: 97.70%, 1: 2.30%
+TOX21_MMP_viability 0: 94.25%, 1: 5.75%
+TOX21_NFkB_BLA_agonist_ch1 0: 95.88%, 1: 4.12%
+TOX21_NFkB_BLA_agonist_ch2 0: 98.55%, 1: 1.45%
+TOX21_NFkB_BLA_agonist_ratio 0: 96.62%, 1: 3.38%
+TOX21_NFkB_BLA_agonist_viability 0: 93.75%, 1: 6.25%
+TOX21_PPARd_BLA_Agonist_viability 0: 90.93%, 1: 9.07%
+TOX21_PPARd_BLA_Antagonist_ch1 0: 98.33%, 1: 1.67%
+TOX21_PPARd_BLA_agonist_ch1 0: 99.72%, 1: 0.28%
+TOX21_PPARd_BLA_agonist_ch2 0: 97.40%, 1: 2.60%
+TOX21_PPARd_BLA_agonist_ratio 0: 97.30%, 1: 2.70%
+TOX21_PPARd_BLA_antagonist_ratio 0: 93.86%, 1: 6.14%
+TOX21_PPARd_BLA_antagonist_viability 0: 99.54%, 1: 0.46%
+TOX21_PPARg_BLA_Agonist_ch1 0: 99.70%, 1: 0.30%
+TOX21_PPARg_BLA_Agonist_ch2 0: 97.05%, 1: 2.95%
+TOX21_PPARg_BLA_Agonist_ratio 0: 95.54%, 1: 4.46%
+TOX21_PPARg_BLA_Antagonist_ch1 0: 99.60%, 1: 0.40%
+TOX21_PPARg_BLA_antagonist_ratio 0: 92.38%, 1: 7.62%
+TOX21_PPARg_BLA_antagonist_viability 0: 97.79%, 1: 2.21%
+TOX21_TR_LUC_GH3_Agonist 0: 99.52%, 1: 0.48%
+TOX21_TR_LUC_GH3_Antagonist 0: 77.80%, 1: 22.20%
+TOX21_VDR_BLA_Agonist_viability 0: 91.23%, 1: 8.77%
+TOX21_VDR_BLA_Antagonist_ch1 0: 97.54%, 1: 2.46%
+TOX21_VDR_BLA_agonist_ch2 0: 99.11%, 1: 0.89%
+TOX21_VDR_BLA_agonist_ratio 0: 99.03%, 1: 0.97%
+TOX21_VDR_BLA_antagonist_ratio 0: 95.63%, 1: 4.37%
+TOX21_VDR_BLA_antagonist_viability 0: 96.13%, 1: 3.87%
+TOX21_p53_BLA_p1_ch1 0: 92.81%, 1: 7.19%
+TOX21_p53_BLA_p1_ch2 0: 94.06%, 1: 5.94%
+TOX21_p53_BLA_p1_ratio 0: 89.74%, 1: 10.26%
+TOX21_p53_BLA_p1_viability 0: 95.03%, 1: 4.97%
+TOX21_p53_BLA_p2_ch1 0: 93.36%, 1: 6.64%
+TOX21_p53_BLA_p2_ch2 0: 89.90%, 1: 10.10%
+TOX21_p53_BLA_p2_ratio 0: 87.00%, 1: 13.00%
+TOX21_p53_BLA_p2_viability 0: 89.94%, 1: 10.06%
+TOX21_p53_BLA_p3_ch1 0: 91.44%, 1: 8.56%
+TOX21_p53_BLA_p3_ch2 0: 91.04%, 1: 8.96%
+TOX21_p53_BLA_p3_ratio 0: 87.91%, 1: 12.09%
+TOX21_p53_BLA_p3_viability 0: 94.54%, 1: 5.46%
+TOX21_p53_BLA_p4_ch1 0: 91.70%, 1: 8.30%
+TOX21_p53_BLA_p4_ch2 0: 92.80%, 1: 7.20%
+TOX21_p53_BLA_p4_ratio 0: 88.03%, 1: 11.97%
+TOX21_p53_BLA_p4_viability 0: 91.54%, 1: 8.46%
+TOX21_p53_BLA_p5_ch1 0: 95.54%, 1: 4.46%
+TOX21_p53_BLA_p5_ch2 0: 91.89%, 1: 8.11%
+TOX21_p53_BLA_p5_ratio 0: 88.87%, 1: 11.13%
+TOX21_p53_BLA_p5_viability 0: 95.86%, 1: 4.14%
+Tanguay_ZF_120hpf_AXIS_up 0: 88.83%, 1: 11.17%
+Tanguay_ZF_120hpf_ActivityScore 0: 81.04%, 1: 18.96%
+Tanguay_ZF_120hpf_BRAI_up 0: 93.83%, 1: 6.17%
+Tanguay_ZF_120hpf_CFIN_up 0: 95.10%, 1: 4.90%
+Tanguay_ZF_120hpf_CIRC_up 0: 98.04%, 1: 1.96%
+Tanguay_ZF_120hpf_EYE_up 0: 92.07%, 1: 7.93%
+Tanguay_ZF_120hpf_JAW_up 0: 88.74%, 1: 11.26%
+Tanguay_ZF_120hpf_MORT_up 0: 87.91%, 1: 12.09%
+Tanguay_ZF_120hpf_OTIC_up 0: 95.69%, 1: 4.31%
+Tanguay_ZF_120hpf_PE_up 0: 88.15%, 1: 11.85%
+Tanguay_ZF_120hpf_PFIN_up 0: 94.42%, 1: 5.58%
+Tanguay_ZF_120hpf_PIG_up 0: 95.40%, 1: 4.60%
+Tanguay_ZF_120hpf_SNOU_up 0: 89.13%, 1: 10.87%
+Tanguay_ZF_120hpf_SOMI_up 0: 96.08%, 1: 3.92%
+Tanguay_ZF_120hpf_SWIM_up 0: 96.57%, 1: 3.43%
+Tanguay_ZF_120hpf_TRUN_up 0: 94.22%, 1: 5.78%
+Tanguay_ZF_120hpf_TR_up 0: 91.87%, 1: 8.13%
+Tanguay_ZF_120hpf_YSE_up 0: 87.37%, 1: 12.63%
+Total size = 8,576 | train size = 6,860 | val size = 858 | test size = 858
+Building model 0
+MoleculeModel(
+  (sigmoid): Sigmoid()
+  (encoder): MPN(
+    (encoder): ModuleList(
+      (0): MPNEncoder(
+        (dropout_layer): Dropout(p=0.0, inplace=False)
+        (act_func): ReLU()
+        (W_i): Linear(in_features=147, out_features=300, bias=False)
+        (W_h): Linear(in_features=300, out_features=300, bias=False)
+        (W_o): Linear(in_features=433, out_features=300, bias=True)
+      )
+    )
+  )
+  (ffn): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): Linear(in_features=300, out_features=300, bias=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=300, out_features=617, bias=True)
+  )
+)
+Number of parameters = 540,617
+Epoch 0
+Loss = 6.7741e-01, PNorm = 39.3948, GNorm = 0.1605, lr_0 = 1.3613e-04
+Loss = 6.1771e-01, PNorm = 39.4146, GNorm = 0.2991, lr_0 = 1.6898e-04
+Loss = 4.8130e-01, PNorm = 39.4555, GNorm = 0.3168, lr_0 = 2.0182e-04
+Loss = 3.8949e-01, PNorm = 39.4785, GNorm = 0.2519, lr_0 = 2.3467e-04
+Loss = 2.7091e-01, PNorm = 39.4877, GNorm = 0.1686, lr_0 = 2.6752e-04
+Loss = 2.8002e-01, PNorm = 39.5091, GNorm = 0.1521, lr_0 = 3.0036e-04
+Loss = 2.4011e-01, PNorm = 39.5289, GNorm = 0.1068, lr_0 = 3.3321e-04
+Loss = 2.7192e-01, PNorm = 39.5517, GNorm = 0.2132, lr_0 = 3.6606e-04
+Loss = 2.5084e-01, PNorm = 39.5863, GNorm = 0.1030, lr_0 = 3.9891e-04
+Loss = 2.2983e-01, PNorm = 39.6175, GNorm = 0.1550, lr_0 = 4.3175e-04
+Loss = 2.4370e-01, PNorm = 39.6506, GNorm = 0.0915, lr_0 = 4.6460e-04
+Loss = 2.3439e-01, PNorm = 39.6786, GNorm = 0.0942, lr_0 = 4.9745e-04
+Loss = 2.3189e-01, PNorm = 39.7165, GNorm = 0.1023, lr_0 = 5.3029e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 1
+Loss = 2.4316e-01, PNorm = 39.7583, GNorm = 0.3303, lr_0 = 5.6642e-04
+Loss = 2.5167e-01, PNorm = 39.7843, GNorm = 0.2895, lr_0 = 5.9927e-04
+Loss = 2.2620e-01, PNorm = 39.8138, GNorm = 0.1066, lr_0 = 6.3212e-04
+Loss = 2.5140e-01, PNorm = 39.8249, GNorm = 0.2574, lr_0 = 6.6496e-04
+Loss = 2.3500e-01, PNorm = 39.8604, GNorm = 0.0862, lr_0 = 6.9781e-04
+Loss = 2.2075e-01, PNorm = 39.9093, GNorm = 0.1216, lr_0 = 7.3066e-04
+Loss = 2.3779e-01, PNorm = 39.9514, GNorm = 0.0961, lr_0 = 7.6350e-04
+Loss = 2.4939e-01, PNorm = 39.9745, GNorm = 0.0924, lr_0 = 7.9635e-04
+Loss = 2.1684e-01, PNorm = 40.0025, GNorm = 0.0858, lr_0 = 8.2920e-04
+Loss = 2.3580e-01, PNorm = 40.0473, GNorm = 0.0972, lr_0 = 8.6204e-04
+Loss = 2.3385e-01, PNorm = 40.0776, GNorm = 0.1682, lr_0 = 8.9489e-04
+Loss = 2.5059e-01, PNorm = 40.0937, GNorm = 0.1704, lr_0 = 9.2774e-04
+Loss = 2.5595e-01, PNorm = 40.1557, GNorm = 0.1123, lr_0 = 9.6058e-04
+Loss = 2.1101e-01, PNorm = 40.2339, GNorm = 0.1438, lr_0 = 9.9343e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 2
+Loss = 2.0832e-01, PNorm = 40.2983, GNorm = 0.0935, lr_0 = 9.9461e-04
+Loss = 2.3670e-01, PNorm = 40.3470, GNorm = 0.1142, lr_0 = 9.8866e-04
+Loss = 2.3090e-01, PNorm = 40.4127, GNorm = 0.1505, lr_0 = 9.8274e-04
+Loss = 2.1800e-01, PNorm = 40.4939, GNorm = 0.0689, lr_0 = 9.7686e-04
+Loss = 1.9650e-01, PNorm = 40.5540, GNorm = 0.1157, lr_0 = 9.7102e-04
+Loss = 2.3019e-01, PNorm = 40.6040, GNorm = 0.1423, lr_0 = 9.6520e-04
+Loss = 2.4230e-01, PNorm = 40.6546, GNorm = 0.1399, lr_0 = 9.5943e-04
+Loss = 2.3367e-01, PNorm = 40.6731, GNorm = 0.1606, lr_0 = 9.5369e-04
+Loss = 2.2709e-01, PNorm = 40.7351, GNorm = 0.1792, lr_0 = 9.4798e-04
+Loss = 2.3835e-01, PNorm = 40.7716, GNorm = 0.1379, lr_0 = 9.4231e-04
+Loss = 2.3309e-01, PNorm = 40.8293, GNorm = 0.0823, lr_0 = 9.3667e-04
+Loss = 2.4032e-01, PNorm = 40.8973, GNorm = 0.0994, lr_0 = 9.3106e-04
+Loss = 2.1959e-01, PNorm = 40.9712, GNorm = 0.1002, lr_0 = 9.2549e-04
+Loss = 2.6701e-01, PNorm = 41.0164, GNorm = 0.1980, lr_0 = 9.1995e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 3
+Loss = 2.2306e-01, PNorm = 41.0764, GNorm = 0.0759, lr_0 = 9.1390e-04
+Loss = 2.0704e-01, PNorm = 41.1733, GNorm = 0.0697, lr_0 = 9.0843e-04
+Loss = 2.1965e-01, PNorm = 41.2034, GNorm = 0.1258, lr_0 = 9.0299e-04
+Loss = 2.4448e-01, PNorm = 41.2734, GNorm = 0.0591, lr_0 = 8.9759e-04
+Loss = 2.2574e-01, PNorm = 41.3475, GNorm = 0.1024, lr_0 = 8.9221e-04
+Loss = 2.0904e-01, PNorm = 41.4153, GNorm = 0.1035, lr_0 = 8.8687e-04
+Loss = 2.3223e-01, PNorm = 41.4668, GNorm = 0.0911, lr_0 = 8.8157e-04
+Loss = 2.1516e-01, PNorm = 41.5230, GNorm = 0.2336, lr_0 = 8.7629e-04
+Loss = 2.2741e-01, PNorm = 41.5805, GNorm = 0.1473, lr_0 = 8.7105e-04
+Loss = 2.4384e-01, PNorm = 41.6341, GNorm = 0.2050, lr_0 = 8.6583e-04
+Loss = 2.3062e-01, PNorm = 41.7042, GNorm = 0.1441, lr_0 = 8.6065e-04
+Loss = 2.3151e-01, PNorm = 41.7876, GNorm = 0.0889, lr_0 = 8.5550e-04
+Loss = 2.1431e-01, PNorm = 41.8609, GNorm = 0.1066, lr_0 = 8.5038e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 4
+Loss = 1.8924e-01, PNorm = 41.9339, GNorm = 0.2046, lr_0 = 8.4479e-04
+Loss = 2.1449e-01, PNorm = 41.9963, GNorm = 0.3826, lr_0 = 8.3973e-04
+Loss = 2.0175e-01, PNorm = 42.0591, GNorm = 0.0966, lr_0 = 8.3470e-04
+Loss = 2.1821e-01, PNorm = 42.1422, GNorm = 0.0918, lr_0 = 8.2971e-04
+Loss = 2.1273e-01, PNorm = 42.2029, GNorm = 0.1153, lr_0 = 8.2474e-04
+Loss = 2.4196e-01, PNorm = 42.2706, GNorm = 0.0602, lr_0 = 8.1981e-04
+Loss = 2.3628e-01, PNorm = 42.3063, GNorm = 0.2646, lr_0 = 8.1490e-04
+Loss = 2.2588e-01, PNorm = 42.3953, GNorm = 0.0634, lr_0 = 8.1003e-04
+Loss = 2.1515e-01, PNorm = 42.4841, GNorm = 0.1673, lr_0 = 8.0518e-04
+Loss = 2.1613e-01, PNorm = 42.5628, GNorm = 0.1644, lr_0 = 8.0036e-04
+Loss = 2.0583e-01, PNorm = 42.6364, GNorm = 0.1074, lr_0 = 7.9557e-04
+Loss = 2.1731e-01, PNorm = 42.7078, GNorm = 0.2049, lr_0 = 7.9081e-04
+Loss = 2.1592e-01, PNorm = 42.8146, GNorm = 0.1078, lr_0 = 7.8608e-04
+Loss = 2.2282e-01, PNorm = 42.9128, GNorm = 0.2007, lr_0 = 7.8137e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 5
+Loss = 1.7339e-01, PNorm = 42.9995, GNorm = 0.0742, lr_0 = 7.7669e-04
+Loss = 2.1192e-01, PNorm = 43.0786, GNorm = 0.3200, lr_0 = 7.7205e-04
+Loss = 2.1519e-01, PNorm = 43.1815, GNorm = 0.4686, lr_0 = 7.6743e-04
+Loss = 2.2495e-01, PNorm = 43.2595, GNorm = 0.4607, lr_0 = 7.6283e-04
+Loss = 2.0420e-01, PNorm = 43.3625, GNorm = 0.1127, lr_0 = 7.5827e-04
+Loss = 1.9973e-01, PNorm = 43.4523, GNorm = 0.1296, lr_0 = 7.5373e-04
+Loss = 2.2040e-01, PNorm = 43.4968, GNorm = 0.2273, lr_0 = 7.4922e-04
+Loss = 2.0946e-01, PNorm = 43.5634, GNorm = 0.1149, lr_0 = 7.4474e-04
+Loss = 2.0447e-01, PNorm = 43.6241, GNorm = 0.0825, lr_0 = 7.4028e-04
+Loss = 2.2684e-01, PNorm = 43.6923, GNorm = 0.2130, lr_0 = 7.3585e-04
+Loss = 2.0725e-01, PNorm = 43.7480, GNorm = 0.1884, lr_0 = 7.3144e-04
+Loss = 2.3317e-01, PNorm = 43.8099, GNorm = 0.3270, lr_0 = 7.2707e-04
+Loss = 2.1509e-01, PNorm = 43.8770, GNorm = 0.2799, lr_0 = 7.2272e-04
+Loss = 2.2066e-01, PNorm = 43.9550, GNorm = 0.1713, lr_0 = 7.1839e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 6
+Loss = 2.1111e-01, PNorm = 44.0201, GNorm = 0.0870, lr_0 = 7.1366e-04
+Loss = 2.1050e-01, PNorm = 44.1005, GNorm = 0.2195, lr_0 = 7.0939e-04
+Loss = 1.9937e-01, PNorm = 44.1812, GNorm = 0.1925, lr_0 = 7.0515e-04
+Loss = 2.3306e-01, PNorm = 44.2713, GNorm = 0.0916, lr_0 = 7.0093e-04
+Loss = 2.0219e-01, PNorm = 44.3484, GNorm = 0.1193, lr_0 = 6.9673e-04
+Loss = 1.9113e-01, PNorm = 44.4494, GNorm = 0.2058, lr_0 = 6.9256e-04
+Loss = 2.1704e-01, PNorm = 44.5149, GNorm = 0.2870, lr_0 = 6.8842e-04
+Loss = 2.1537e-01, PNorm = 44.5894, GNorm = 0.3549, lr_0 = 6.8430e-04
+Loss = 2.0490e-01, PNorm = 44.6431, GNorm = 0.0613, lr_0 = 6.8020e-04
+Loss = 2.0782e-01, PNorm = 44.6996, GNorm = 0.1636, lr_0 = 6.7613e-04
+Loss = 2.0129e-01, PNorm = 44.7746, GNorm = 0.1218, lr_0 = 6.7209e-04
+Loss = 1.9334e-01, PNorm = 44.8373, GNorm = 0.1923, lr_0 = 6.6806e-04
+Loss = 2.1339e-01, PNorm = 44.8624, GNorm = 0.2154, lr_0 = 6.6407e-04
+Loss = 2.1305e-01, PNorm = 44.9086, GNorm = 0.1260, lr_0 = 6.6009e-04
+Loss = 2.1519e-01, PNorm = 44.9137, GNorm = 0.3207, lr_0 = 6.5969e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 7
+Loss = 1.8716e-01, PNorm = 44.9828, GNorm = 0.0781, lr_0 = 6.5575e-04
+Loss = 1.8847e-01, PNorm = 45.0538, GNorm = 0.2046, lr_0 = 6.5182e-04
+Loss = 1.9465e-01, PNorm = 45.1029, GNorm = 0.1419, lr_0 = 6.4792e-04
+Loss = 2.0998e-01, PNorm = 45.1536, GNorm = 0.1138, lr_0 = 6.4404e-04
+Loss = 1.9964e-01, PNorm = 45.2079, GNorm = 0.2045, lr_0 = 6.4019e-04
+Loss = 2.0351e-01, PNorm = 45.2683, GNorm = 0.0976, lr_0 = 6.3636e-04
+Loss = 2.1745e-01, PNorm = 45.3089, GNorm = 0.1419, lr_0 = 6.3255e-04
+Loss = 2.0275e-01, PNorm = 45.3772, GNorm = 0.0885, lr_0 = 6.2876e-04
+Loss = 2.0711e-01, PNorm = 45.4274, GNorm = 0.1565, lr_0 = 6.2500e-04
+Loss = 1.9490e-01, PNorm = 45.4826, GNorm = 0.0790, lr_0 = 6.2126e-04
+Loss = 2.0944e-01, PNorm = 45.5345, GNorm = 0.2351, lr_0 = 6.1754e-04
+Loss = 2.2285e-01, PNorm = 45.5767, GNorm = 0.3685, lr_0 = 6.1385e-04
+Loss = 2.1212e-01, PNorm = 45.6335, GNorm = 0.1995, lr_0 = 6.1017e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 8
+Loss = 2.3107e-01, PNorm = 45.7267, GNorm = 0.1975, lr_0 = 6.0616e-04
+Loss = 1.9713e-01, PNorm = 45.8211, GNorm = 0.4171, lr_0 = 6.0253e-04
+Loss = 2.0733e-01, PNorm = 45.8867, GNorm = 0.1971, lr_0 = 5.9892e-04
+Loss = 2.0037e-01, PNorm = 45.9201, GNorm = 0.1212, lr_0 = 5.9534e-04
+Loss = 1.8708e-01, PNorm = 45.9846, GNorm = 0.1012, lr_0 = 5.9178e-04
+Loss = 2.1298e-01, PNorm = 46.0256, GNorm = 0.1871, lr_0 = 5.8824e-04
+Loss = 1.7133e-01, PNorm = 46.0984, GNorm = 0.1947, lr_0 = 5.8472e-04
+Loss = 1.9090e-01, PNorm = 46.1257, GNorm = 0.1058, lr_0 = 5.8122e-04
+Loss = 2.1277e-01, PNorm = 46.1693, GNorm = 0.2145, lr_0 = 5.7774e-04
+Loss = 2.0348e-01, PNorm = 46.2414, GNorm = 0.1120, lr_0 = 5.7428e-04
+Loss = 2.0184e-01, PNorm = 46.2862, GNorm = 0.1336, lr_0 = 5.7084e-04
+Loss = 2.0372e-01, PNorm = 46.3315, GNorm = 0.1667, lr_0 = 5.6743e-04
+Loss = 1.9981e-01, PNorm = 46.3761, GNorm = 0.3173, lr_0 = 5.6403e-04
+Loss = 2.1887e-01, PNorm = 46.4356, GNorm = 0.1075, lr_0 = 5.6066e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 9
+Loss = 1.8898e-01, PNorm = 46.4848, GNorm = 0.1512, lr_0 = 5.5697e-04
+Loss = 1.9650e-01, PNorm = 46.5325, GNorm = 0.1880, lr_0 = 5.5363e-04
+Loss = 1.9716e-01, PNorm = 46.5736, GNorm = 0.2081, lr_0 = 5.5032e-04
+Loss = 2.1286e-01, PNorm = 46.6178, GNorm = 0.3408, lr_0 = 5.4703e-04
+Loss = 2.1651e-01, PNorm = 46.6660, GNorm = 0.1643, lr_0 = 5.4375e-04
+Loss = 1.8065e-01, PNorm = 46.7310, GNorm = 0.1396, lr_0 = 5.4050e-04
+Loss = 1.9515e-01, PNorm = 46.7869, GNorm = 0.4888, lr_0 = 5.3726e-04
+Loss = 2.0562e-01, PNorm = 46.8146, GNorm = 0.1672, lr_0 = 5.3405e-04
+Loss = 1.8982e-01, PNorm = 46.8631, GNorm = 0.1825, lr_0 = 5.3085e-04
+Loss = 2.0182e-01, PNorm = 46.9174, GNorm = 0.1214, lr_0 = 5.2768e-04
+Loss = 1.9781e-01, PNorm = 46.9522, GNorm = 0.3220, lr_0 = 5.2452e-04
+Loss = 2.0530e-01, PNorm = 47.0071, GNorm = 0.1801, lr_0 = 5.2138e-04
+Loss = 2.0319e-01, PNorm = 47.0467, GNorm = 0.1267, lr_0 = 5.1826e-04
+Loss = 1.9289e-01, PNorm = 47.1232, GNorm = 0.3181, lr_0 = 5.1516e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 10
+Loss = 1.8907e-01, PNorm = 47.1689, GNorm = 0.3358, lr_0 = 5.1207e-04
+Loss = 1.9231e-01, PNorm = 47.2162, GNorm = 0.1120, lr_0 = 5.0901e-04
+Loss = 1.8538e-01, PNorm = 47.2645, GNorm = 0.4112, lr_0 = 5.0596e-04
+Loss = 1.9319e-01, PNorm = 47.3223, GNorm = 0.4754, lr_0 = 5.0294e-04
+Loss = 2.0005e-01, PNorm = 47.3530, GNorm = 0.2530, lr_0 = 4.9993e-04
+Loss = 1.9477e-01, PNorm = 47.3983, GNorm = 0.1185, lr_0 = 4.9693e-04
+Loss = 2.1369e-01, PNorm = 47.4570, GNorm = 0.1391, lr_0 = 4.9396e-04
+Loss = 1.9643e-01, PNorm = 47.4879, GNorm = 0.1400, lr_0 = 4.9100e-04
+Loss = 2.0397e-01, PNorm = 47.5323, GNorm = 0.2290, lr_0 = 4.8806e-04
+Loss = 2.0661e-01, PNorm = 47.5751, GNorm = 0.0984, lr_0 = 4.8514e-04
+Loss = 1.9141e-01, PNorm = 47.6123, GNorm = 0.1533, lr_0 = 4.8224e-04
+Loss = 2.0677e-01, PNorm = 47.6535, GNorm = 0.2362, lr_0 = 4.7935e-04
+Loss = 1.9266e-01, PNorm = 47.6955, GNorm = 0.1884, lr_0 = 4.7649e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 11
+Loss = 1.5205e-01, PNorm = 47.7230, GNorm = 0.1588, lr_0 = 4.7335e-04
+Loss = 2.1344e-01, PNorm = 47.7501, GNorm = 0.2254, lr_0 = 4.7052e-04
+Loss = 1.8573e-01, PNorm = 47.8133, GNorm = 0.2216, lr_0 = 4.6770e-04
+Loss = 1.9441e-01, PNorm = 47.8476, GNorm = 0.1656, lr_0 = 4.6490e-04
+Loss = 2.1134e-01, PNorm = 47.8915, GNorm = 0.2455, lr_0 = 4.6212e-04
+Loss = 1.8727e-01, PNorm = 47.9422, GNorm = 0.2060, lr_0 = 4.5935e-04
+Loss = 2.0369e-01, PNorm = 47.9815, GNorm = 0.1295, lr_0 = 4.5661e-04
+Loss = 1.8976e-01, PNorm = 48.0045, GNorm = 0.1931, lr_0 = 4.5387e-04
+Loss = 1.9237e-01, PNorm = 48.0614, GNorm = 0.1341, lr_0 = 4.5116e-04
+Loss = 1.9739e-01, PNorm = 48.0784, GNorm = 0.2496, lr_0 = 4.4846e-04
+Loss = 1.9599e-01, PNorm = 48.1231, GNorm = 0.1139, lr_0 = 4.4577e-04
+Loss = 2.0281e-01, PNorm = 48.1613, GNorm = 0.1302, lr_0 = 4.4311e-04
+Loss = 1.9307e-01, PNorm = 48.2026, GNorm = 0.2344, lr_0 = 4.4045e-04
+Loss = 1.9220e-01, PNorm = 48.2411, GNorm = 0.1452, lr_0 = 4.3782e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 12
+Loss = 1.9816e-01, PNorm = 48.2804, GNorm = 0.2224, lr_0 = 4.3494e-04
+Loss = 1.9026e-01, PNorm = 48.3126, GNorm = 0.2233, lr_0 = 4.3233e-04
+Loss = 1.9381e-01, PNorm = 48.3449, GNorm = 0.1583, lr_0 = 4.2975e-04
+Loss = 2.0338e-01, PNorm = 48.3791, GNorm = 0.1109, lr_0 = 4.2717e-04
+Loss = 1.8018e-01, PNorm = 48.4213, GNorm = 0.2446, lr_0 = 4.2462e-04
+Loss = 2.0510e-01, PNorm = 48.4650, GNorm = 0.1183, lr_0 = 4.2208e-04
+Loss = 1.9888e-01, PNorm = 48.4854, GNorm = 0.1792, lr_0 = 4.1955e-04
+Loss = 1.9711e-01, PNorm = 48.5300, GNorm = 0.1214, lr_0 = 4.1704e-04
+Loss = 1.8176e-01, PNorm = 48.5658, GNorm = 0.1934, lr_0 = 4.1454e-04
+Loss = 1.9202e-01, PNorm = 48.5967, GNorm = 0.1362, lr_0 = 4.1206e-04
+Loss = 1.9351e-01, PNorm = 48.6421, GNorm = 0.1225, lr_0 = 4.0960e-04
+Loss = 1.9241e-01, PNorm = 48.6726, GNorm = 0.1076, lr_0 = 4.0715e-04
+Loss = 1.7282e-01, PNorm = 48.7058, GNorm = 0.0768, lr_0 = 4.0471e-04
+Loss = 2.1170e-01, PNorm = 48.7375, GNorm = 0.2107, lr_0 = 4.0229e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 13
+Loss = 1.8664e-01, PNorm = 48.7661, GNorm = 0.2378, lr_0 = 3.9964e-04
+Loss = 1.9959e-01, PNorm = 48.8073, GNorm = 0.2601, lr_0 = 3.9725e-04
+Loss = 1.8168e-01, PNorm = 48.8328, GNorm = 0.1188, lr_0 = 3.9487e-04
+Loss = 2.0347e-01, PNorm = 48.8694, GNorm = 0.2960, lr_0 = 3.9251e-04
+Loss = 1.7720e-01, PNorm = 48.9024, GNorm = 0.1076, lr_0 = 3.9016e-04
+Loss = 1.8673e-01, PNorm = 48.9348, GNorm = 0.2325, lr_0 = 3.8782e-04
+Loss = 1.8664e-01, PNorm = 48.9746, GNorm = 0.3676, lr_0 = 3.8550e-04
+Loss = 1.7408e-01, PNorm = 49.0045, GNorm = 0.2503, lr_0 = 3.8320e-04
+Loss = 1.6238e-01, PNorm = 49.0424, GNorm = 0.1272, lr_0 = 3.8090e-04
+Loss = 2.2332e-01, PNorm = 49.0492, GNorm = 0.1324, lr_0 = 3.7862e-04
+Loss = 1.9292e-01, PNorm = 49.0735, GNorm = 0.0942, lr_0 = 3.7636e-04
+Loss = 2.1637e-01, PNorm = 49.1061, GNorm = 0.1779, lr_0 = 3.7410e-04
+Loss = 1.9143e-01, PNorm = 49.1383, GNorm = 0.2106, lr_0 = 3.7187e-04
+Loss = 1.9542e-01, PNorm = 49.1731, GNorm = 0.1722, lr_0 = 3.6964e-04
+Loss = 1.5643e-01, PNorm = 49.1786, GNorm = 0.3824, lr_0 = 3.6942e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 14
+Loss = 1.9582e-01, PNorm = 49.2148, GNorm = 0.1632, lr_0 = 3.6721e-04
+Loss = 2.0861e-01, PNorm = 49.2549, GNorm = 0.1169, lr_0 = 3.6501e-04
+Loss = 1.9640e-01, PNorm = 49.2811, GNorm = 0.2539, lr_0 = 3.6283e-04
+Loss = 1.8831e-01, PNorm = 49.3106, GNorm = 0.2550, lr_0 = 3.6065e-04
+Loss = 1.8995e-01, PNorm = 49.3432, GNorm = 0.2009, lr_0 = 3.5850e-04
+Loss = 1.8890e-01, PNorm = 49.3648, GNorm = 0.1997, lr_0 = 3.5635e-04
+Loss = 1.9949e-01, PNorm = 49.3989, GNorm = 0.3862, lr_0 = 3.5422e-04
+Loss = 1.8012e-01, PNorm = 49.4373, GNorm = 0.2391, lr_0 = 3.5210e-04
+Loss = 1.8209e-01, PNorm = 49.4598, GNorm = 0.2098, lr_0 = 3.4999e-04
+Loss = 1.8746e-01, PNorm = 49.4811, GNorm = 0.1731, lr_0 = 3.4790e-04
+Loss = 1.8866e-01, PNorm = 49.5266, GNorm = 0.3646, lr_0 = 3.4581e-04
+Loss = 1.7981e-01, PNorm = 49.5673, GNorm = 0.2224, lr_0 = 3.4374e-04
+Loss = 1.8277e-01, PNorm = 49.5901, GNorm = 0.1339, lr_0 = 3.4169e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 15
+Loss = 1.6172e-01, PNorm = 49.6106, GNorm = 0.1614, lr_0 = 3.3964e-04
+Loss = 1.9670e-01, PNorm = 49.6396, GNorm = 0.2133, lr_0 = 3.3761e-04
+Loss = 1.7771e-01, PNorm = 49.6875, GNorm = 0.1939, lr_0 = 3.3559e-04
+Loss = 2.0272e-01, PNorm = 49.7151, GNorm = 0.2447, lr_0 = 3.3358e-04
+Loss = 1.9138e-01, PNorm = 49.7489, GNorm = 0.1736, lr_0 = 3.3158e-04
+Loss = 1.9373e-01, PNorm = 49.7825, GNorm = 0.1524, lr_0 = 3.2960e-04
+Loss = 1.7103e-01, PNorm = 49.8092, GNorm = 0.1275, lr_0 = 3.2763e-04
+Loss = 1.9213e-01, PNorm = 49.8370, GNorm = 0.2190, lr_0 = 3.2567e-04
+Loss = 1.9413e-01, PNorm = 49.8647, GNorm = 0.1464, lr_0 = 3.2372e-04
+Loss = 1.7833e-01, PNorm = 49.8884, GNorm = 0.3080, lr_0 = 3.2178e-04
+Loss = 1.8737e-01, PNorm = 49.9159, GNorm = 0.1983, lr_0 = 3.1985e-04
+Loss = 1.8356e-01, PNorm = 49.9404, GNorm = 0.2331, lr_0 = 3.1794e-04
+Loss = 1.8993e-01, PNorm = 49.9721, GNorm = 0.1683, lr_0 = 3.1604e-04
+Loss = 1.8014e-01, PNorm = 49.9936, GNorm = 0.1413, lr_0 = 3.1415e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 16
+Loss = 1.9249e-01, PNorm = 50.0236, GNorm = 0.2782, lr_0 = 3.1208e-04
+Loss = 2.0030e-01, PNorm = 50.0519, GNorm = 0.1045, lr_0 = 3.1021e-04
+Loss = 1.8714e-01, PNorm = 50.0852, GNorm = 0.1205, lr_0 = 3.0836e-04
+Loss = 1.8661e-01, PNorm = 50.1194, GNorm = 0.1502, lr_0 = 3.0651e-04
+Loss = 1.8824e-01, PNorm = 50.1546, GNorm = 0.1130, lr_0 = 3.0468e-04
+Loss = 1.8772e-01, PNorm = 50.1874, GNorm = 0.1656, lr_0 = 3.0285e-04
+Loss = 1.8194e-01, PNorm = 50.2099, GNorm = 0.1004, lr_0 = 3.0104e-04
+Loss = 1.8872e-01, PNorm = 50.2387, GNorm = 0.1962, lr_0 = 2.9924e-04
+Loss = 1.8338e-01, PNorm = 50.2665, GNorm = 0.2255, lr_0 = 2.9745e-04
+Loss = 1.7428e-01, PNorm = 50.2856, GNorm = 0.2123, lr_0 = 2.9567e-04
+Loss = 1.9358e-01, PNorm = 50.3019, GNorm = 0.1604, lr_0 = 2.9390e-04
+Loss = 1.7791e-01, PNorm = 50.3243, GNorm = 0.2236, lr_0 = 2.9214e-04
+Loss = 1.7945e-01, PNorm = 50.3530, GNorm = 0.1783, lr_0 = 2.9039e-04
+Loss = 1.9734e-01, PNorm = 50.3641, GNorm = 0.2233, lr_0 = 2.8865e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 17
+Loss = 1.8048e-01, PNorm = 50.3963, GNorm = 0.2517, lr_0 = 2.8675e-04
+Loss = 1.7493e-01, PNorm = 50.4199, GNorm = 0.2907, lr_0 = 2.8504e-04
+Loss = 1.6884e-01, PNorm = 50.4426, GNorm = 0.2496, lr_0 = 2.8333e-04
+Loss = 1.9320e-01, PNorm = 50.4641, GNorm = 0.0887, lr_0 = 2.8164e-04
+Loss = 1.8897e-01, PNorm = 50.4834, GNorm = 0.1840, lr_0 = 2.7995e-04
+Loss = 1.9689e-01, PNorm = 50.5085, GNorm = 0.2753, lr_0 = 2.7827e-04
+Loss = 1.9302e-01, PNorm = 50.5373, GNorm = 0.1461, lr_0 = 2.7661e-04
+Loss = 1.8811e-01, PNorm = 50.5708, GNorm = 0.2335, lr_0 = 2.7495e-04
+Loss = 1.8155e-01, PNorm = 50.5958, GNorm = 0.3484, lr_0 = 2.7331e-04
+Loss = 1.7916e-01, PNorm = 50.6265, GNorm = 0.0960, lr_0 = 2.7167e-04
+Loss = 1.9154e-01, PNorm = 50.6456, GNorm = 0.2124, lr_0 = 2.7005e-04
+Loss = 1.8773e-01, PNorm = 50.6708, GNorm = 0.1443, lr_0 = 2.6843e-04
+Loss = 1.7140e-01, PNorm = 50.6995, GNorm = 0.4097, lr_0 = 2.6682e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 18
+Loss = 1.8267e-01, PNorm = 50.7164, GNorm = 0.1430, lr_0 = 2.6507e-04
+Loss = 1.8323e-01, PNorm = 50.7466, GNorm = 0.1453, lr_0 = 2.6348e-04
+Loss = 1.9076e-01, PNorm = 50.7674, GNorm = 0.2180, lr_0 = 2.6191e-04
+Loss = 1.7247e-01, PNorm = 50.7951, GNorm = 0.1406, lr_0 = 2.6034e-04
+Loss = 1.6429e-01, PNorm = 50.8165, GNorm = 0.1535, lr_0 = 2.5878e-04
+Loss = 1.8742e-01, PNorm = 50.8503, GNorm = 0.2264, lr_0 = 2.5723e-04
+Loss = 1.8923e-01, PNorm = 50.8650, GNorm = 0.1554, lr_0 = 2.5569e-04
+Loss = 2.0129e-01, PNorm = 50.8865, GNorm = 0.2024, lr_0 = 2.5416e-04
+Loss = 1.8186e-01, PNorm = 50.9129, GNorm = 0.1458, lr_0 = 2.5264e-04
+Loss = 1.8511e-01, PNorm = 50.9346, GNorm = 0.1538, lr_0 = 2.5113e-04
+Loss = 1.7653e-01, PNorm = 50.9653, GNorm = 0.1553, lr_0 = 2.4963e-04
+Loss = 1.8171e-01, PNorm = 50.9815, GNorm = 0.1204, lr_0 = 2.4813e-04
+Loss = 1.8711e-01, PNorm = 51.0032, GNorm = 0.3372, lr_0 = 2.4665e-04
+Loss = 1.7752e-01, PNorm = 51.0249, GNorm = 0.2714, lr_0 = 2.4517e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 19
+Loss = 1.8668e-01, PNorm = 51.0276, GNorm = 0.1617, lr_0 = 2.4356e-04
+Loss = 1.8269e-01, PNorm = 51.0604, GNorm = 0.1848, lr_0 = 2.4210e-04
+Loss = 1.9697e-01, PNorm = 51.0688, GNorm = 0.4650, lr_0 = 2.4065e-04
+Loss = 1.8611e-01, PNorm = 51.1011, GNorm = 0.1951, lr_0 = 2.3921e-04
+Loss = 1.8636e-01, PNorm = 51.1182, GNorm = 0.2015, lr_0 = 2.3778e-04
+Loss = 1.6294e-01, PNorm = 51.1500, GNorm = 0.1061, lr_0 = 2.3636e-04
+Loss = 1.9476e-01, PNorm = 51.1663, GNorm = 0.1248, lr_0 = 2.3494e-04
+Loss = 1.8313e-01, PNorm = 51.1927, GNorm = 0.1428, lr_0 = 2.3354e-04
+Loss = 1.8329e-01, PNorm = 51.2158, GNorm = 0.1119, lr_0 = 2.3214e-04
+Loss = 1.7370e-01, PNorm = 51.2316, GNorm = 0.3218, lr_0 = 2.3075e-04
+Loss = 1.7341e-01, PNorm = 51.2411, GNorm = 0.1900, lr_0 = 2.2937e-04
+Loss = 1.8694e-01, PNorm = 51.2546, GNorm = 0.1450, lr_0 = 2.2799e-04
+Loss = 1.8744e-01, PNorm = 51.2799, GNorm = 0.1388, lr_0 = 2.2663e-04
+Loss = 1.7727e-01, PNorm = 51.3006, GNorm = 0.1446, lr_0 = 2.2527e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 20
+Loss = 1.6851e-01, PNorm = 51.3191, GNorm = 0.1566, lr_0 = 2.2393e-04
+Loss = 1.9477e-01, PNorm = 51.3464, GNorm = 0.1779, lr_0 = 2.2259e-04
+Loss = 1.7563e-01, PNorm = 51.3722, GNorm = 0.2346, lr_0 = 2.2125e-04
+Loss = 1.9473e-01, PNorm = 51.3915, GNorm = 0.2204, lr_0 = 2.1993e-04
+Loss = 1.7846e-01, PNorm = 51.4158, GNorm = 0.2485, lr_0 = 2.1861e-04
+Loss = 1.8751e-01, PNorm = 51.4336, GNorm = 0.2040, lr_0 = 2.1731e-04
+Loss = 1.8204e-01, PNorm = 51.4530, GNorm = 0.3719, lr_0 = 2.1600e-04
+Loss = 1.6185e-01, PNorm = 51.4702, GNorm = 0.1196, lr_0 = 2.1471e-04
+Loss = 1.8390e-01, PNorm = 51.4824, GNorm = 0.1862, lr_0 = 2.1343e-04
+Loss = 1.7983e-01, PNorm = 51.5117, GNorm = 0.1509, lr_0 = 2.1215e-04
+Loss = 1.8296e-01, PNorm = 51.5277, GNorm = 0.2163, lr_0 = 2.1088e-04
+Loss = 1.8450e-01, PNorm = 51.5438, GNorm = 0.2852, lr_0 = 2.0962e-04
+Loss = 1.7430e-01, PNorm = 51.5614, GNorm = 0.1322, lr_0 = 2.0836e-04
+Loss = 1.8739e-01, PNorm = 51.5759, GNorm = 0.4459, lr_0 = 2.0712e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 21
+Loss = 1.7998e-01, PNorm = 51.5978, GNorm = 0.1302, lr_0 = 2.0575e-04
+Loss = 1.7039e-01, PNorm = 51.6119, GNorm = 0.2905, lr_0 = 2.0452e-04
+Loss = 1.9178e-01, PNorm = 51.6270, GNorm = 0.3461, lr_0 = 2.0330e-04
+Loss = 1.8147e-01, PNorm = 51.6499, GNorm = 0.1139, lr_0 = 2.0208e-04
+Loss = 2.0001e-01, PNorm = 51.6656, GNorm = 0.2759, lr_0 = 2.0087e-04
+Loss = 1.6897e-01, PNorm = 51.6825, GNorm = 0.2211, lr_0 = 1.9967e-04
+Loss = 1.7819e-01, PNorm = 51.6951, GNorm = 0.2729, lr_0 = 1.9848e-04
+Loss = 1.8282e-01, PNorm = 51.7201, GNorm = 0.3835, lr_0 = 1.9729e-04
+Loss = 1.8048e-01, PNorm = 51.7352, GNorm = 0.2738, lr_0 = 1.9611e-04
+Loss = 1.8113e-01, PNorm = 51.7493, GNorm = 0.1686, lr_0 = 1.9493e-04
+Loss = 1.8124e-01, PNorm = 51.7725, GNorm = 0.2856, lr_0 = 1.9377e-04
+Loss = 1.6334e-01, PNorm = 51.7952, GNorm = 0.0993, lr_0 = 1.9261e-04
+Loss = 1.8817e-01, PNorm = 51.8066, GNorm = 0.2733, lr_0 = 1.9145e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 22
+Loss = 1.6714e-01, PNorm = 51.8276, GNorm = 0.2131, lr_0 = 1.9019e-04
+Loss = 1.7368e-01, PNorm = 51.8398, GNorm = 0.1102, lr_0 = 1.8906e-04
+Loss = 1.6567e-01, PNorm = 51.8665, GNorm = 0.1683, lr_0 = 1.8792e-04
+Loss = 1.6663e-01, PNorm = 51.8813, GNorm = 0.0622, lr_0 = 1.8680e-04
+Loss = 1.8171e-01, PNorm = 51.8939, GNorm = 0.2393, lr_0 = 1.8568e-04
+Loss = 1.7638e-01, PNorm = 51.9159, GNorm = 0.2341, lr_0 = 1.8457e-04
+Loss = 1.7480e-01, PNorm = 51.9311, GNorm = 0.1875, lr_0 = 1.8347e-04
+Loss = 2.0037e-01, PNorm = 51.9500, GNorm = 0.2628, lr_0 = 1.8237e-04
+Loss = 1.9526e-01, PNorm = 51.9703, GNorm = 0.2072, lr_0 = 1.8128e-04
+Loss = 1.7695e-01, PNorm = 51.9833, GNorm = 0.2042, lr_0 = 1.8019e-04
+Loss = 1.9563e-01, PNorm = 51.9954, GNorm = 0.3806, lr_0 = 1.7911e-04
+Loss = 1.7439e-01, PNorm = 52.0171, GNorm = 0.1587, lr_0 = 1.7804e-04
+Loss = 1.6889e-01, PNorm = 52.0302, GNorm = 0.1157, lr_0 = 1.7698e-04
+Loss = 1.8066e-01, PNorm = 52.0409, GNorm = 0.1276, lr_0 = 1.7592e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 23
+Loss = 1.6949e-01, PNorm = 52.0658, GNorm = 0.2588, lr_0 = 1.7476e-04
+Loss = 1.8719e-01, PNorm = 52.0696, GNorm = 0.1919, lr_0 = 1.7371e-04
+Loss = 1.9264e-01, PNorm = 52.0881, GNorm = 0.4397, lr_0 = 1.7267e-04
+Loss = 1.8376e-01, PNorm = 52.1041, GNorm = 0.1949, lr_0 = 1.7164e-04
+Loss = 1.6809e-01, PNorm = 52.1252, GNorm = 0.2114, lr_0 = 1.7061e-04
+Loss = 1.7301e-01, PNorm = 52.1384, GNorm = 0.2482, lr_0 = 1.6959e-04
+Loss = 1.7420e-01, PNorm = 52.1584, GNorm = 0.2062, lr_0 = 1.6858e-04
+Loss = 1.7684e-01, PNorm = 52.1710, GNorm = 0.1313, lr_0 = 1.6757e-04
+Loss = 1.7213e-01, PNorm = 52.1839, GNorm = 0.1446, lr_0 = 1.6657e-04
+Loss = 1.8346e-01, PNorm = 52.1916, GNorm = 0.1201, lr_0 = 1.6557e-04
+Loss = 1.7396e-01, PNorm = 52.2119, GNorm = 0.1817, lr_0 = 1.6458e-04
+Loss = 1.7316e-01, PNorm = 52.2274, GNorm = 0.1402, lr_0 = 1.6359e-04
+Loss = 1.7423e-01, PNorm = 52.2419, GNorm = 0.1443, lr_0 = 1.6261e-04
+Loss = 1.9035e-01, PNorm = 52.2539, GNorm = 0.3204, lr_0 = 1.6164e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 24
+Loss = 1.7721e-01, PNorm = 52.2734, GNorm = 0.1710, lr_0 = 1.6058e-04
+Loss = 1.7866e-01, PNorm = 52.2840, GNorm = 0.1869, lr_0 = 1.5962e-04
+Loss = 1.8648e-01, PNorm = 52.3049, GNorm = 0.4982, lr_0 = 1.5866e-04
+Loss = 1.7099e-01, PNorm = 52.3183, GNorm = 0.2034, lr_0 = 1.5771e-04
+Loss = 1.8133e-01, PNorm = 52.3321, GNorm = 0.1225, lr_0 = 1.5677e-04
+Loss = 1.7811e-01, PNorm = 52.3484, GNorm = 0.1763, lr_0 = 1.5583e-04
+Loss = 1.8797e-01, PNorm = 52.3578, GNorm = 0.2653, lr_0 = 1.5490e-04
+Loss = 1.9075e-01, PNorm = 52.3685, GNorm = 0.2017, lr_0 = 1.5397e-04
+Loss = 1.8565e-01, PNorm = 52.3823, GNorm = 0.2863, lr_0 = 1.5305e-04
+Loss = 1.7693e-01, PNorm = 52.4001, GNorm = 0.1131, lr_0 = 1.5213e-04
+Loss = 1.7596e-01, PNorm = 52.4068, GNorm = 0.3789, lr_0 = 1.5122e-04
+Loss = 1.5555e-01, PNorm = 52.4245, GNorm = 0.2320, lr_0 = 1.5032e-04
+Loss = 1.6590e-01, PNorm = 52.4311, GNorm = 0.3115, lr_0 = 1.4942e-04
+Loss = 1.8041e-01, PNorm = 52.4482, GNorm = 0.2390, lr_0 = 1.4852e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 25
+Loss = 1.8302e-01, PNorm = 52.4612, GNorm = 0.1241, lr_0 = 1.4763e-04
+Loss = 1.6651e-01, PNorm = 52.4775, GNorm = 0.4325, lr_0 = 1.4675e-04
+Loss = 1.9021e-01, PNorm = 52.4839, GNorm = 0.1502, lr_0 = 1.4587e-04
+Loss = 1.8980e-01, PNorm = 52.5023, GNorm = 0.1540, lr_0 = 1.4500e-04
+Loss = 1.8158e-01, PNorm = 52.5141, GNorm = 0.1644, lr_0 = 1.4413e-04
+Loss = 1.7070e-01, PNorm = 52.5335, GNorm = 0.1055, lr_0 = 1.4327e-04
+Loss = 1.8412e-01, PNorm = 52.5454, GNorm = 0.1526, lr_0 = 1.4241e-04
+Loss = 1.7475e-01, PNorm = 52.5608, GNorm = 0.4714, lr_0 = 1.4156e-04
+Loss = 1.9644e-01, PNorm = 52.5654, GNorm = 0.1960, lr_0 = 1.4071e-04
+Loss = 1.7073e-01, PNorm = 52.5842, GNorm = 0.1233, lr_0 = 1.3987e-04
+Loss = 1.5869e-01, PNorm = 52.5958, GNorm = 0.1361, lr_0 = 1.3903e-04
+Loss = 1.6482e-01, PNorm = 52.6066, GNorm = 0.2023, lr_0 = 1.3820e-04
+Loss = 1.6806e-01, PNorm = 52.6181, GNorm = 0.1343, lr_0 = 1.3737e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 26
+Loss = 1.9026e-01, PNorm = 52.6242, GNorm = 0.1605, lr_0 = 1.3647e-04
+Loss = 1.8505e-01, PNorm = 52.6469, GNorm = 0.1813, lr_0 = 1.3565e-04
+Loss = 1.7422e-01, PNorm = 52.6561, GNorm = 0.1427, lr_0 = 1.3484e-04
+Loss = 1.8075e-01, PNorm = 52.6659, GNorm = 0.2830, lr_0 = 1.3403e-04
+Loss = 1.6375e-01, PNorm = 52.6813, GNorm = 0.2209, lr_0 = 1.3323e-04
+Loss = 1.7335e-01, PNorm = 52.6905, GNorm = 0.2928, lr_0 = 1.3243e-04
+Loss = 1.6890e-01, PNorm = 52.7043, GNorm = 0.1482, lr_0 = 1.3164e-04
+Loss = 1.7812e-01, PNorm = 52.7127, GNorm = 0.1594, lr_0 = 1.3085e-04
+Loss = 1.8370e-01, PNorm = 52.7235, GNorm = 0.1303, lr_0 = 1.3007e-04
+Loss = 1.7932e-01, PNorm = 52.7365, GNorm = 0.1873, lr_0 = 1.2929e-04
+Loss = 1.7496e-01, PNorm = 52.7503, GNorm = 0.1411, lr_0 = 1.2852e-04
+Loss = 1.8282e-01, PNorm = 52.7636, GNorm = 0.2939, lr_0 = 1.2775e-04
+Loss = 1.7338e-01, PNorm = 52.7770, GNorm = 0.1128, lr_0 = 1.2699e-04
+Loss = 1.6737e-01, PNorm = 52.7879, GNorm = 0.1238, lr_0 = 1.2623e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 27
+Loss = 1.5688e-01, PNorm = 52.8043, GNorm = 0.2602, lr_0 = 1.2539e-04
+Loss = 1.7725e-01, PNorm = 52.8157, GNorm = 0.1841, lr_0 = 1.2464e-04
+Loss = 1.6361e-01, PNorm = 52.8298, GNorm = 0.2065, lr_0 = 1.2390e-04
+Loss = 1.6897e-01, PNorm = 52.8359, GNorm = 0.1601, lr_0 = 1.2316e-04
+Loss = 1.8099e-01, PNorm = 52.8494, GNorm = 0.1469, lr_0 = 1.2242e-04
+Loss = 1.7297e-01, PNorm = 52.8605, GNorm = 0.3028, lr_0 = 1.2169e-04
+Loss = 1.7237e-01, PNorm = 52.8732, GNorm = 0.1544, lr_0 = 1.2096e-04
+Loss = 1.7603e-01, PNorm = 52.8829, GNorm = 0.1125, lr_0 = 1.2024e-04
+Loss = 1.8209e-01, PNorm = 52.8928, GNorm = 0.1774, lr_0 = 1.1952e-04
+Loss = 1.9207e-01, PNorm = 52.9060, GNorm = 0.2231, lr_0 = 1.1880e-04
+Loss = 1.7439e-01, PNorm = 52.9172, GNorm = 0.1704, lr_0 = 1.1809e-04
+Loss = 1.7548e-01, PNorm = 52.9261, GNorm = 0.3320, lr_0 = 1.1738e-04
+Loss = 1.6732e-01, PNorm = 52.9392, GNorm = 0.1484, lr_0 = 1.1668e-04
+Loss = 1.8173e-01, PNorm = 52.9453, GNorm = 0.1330, lr_0 = 1.1598e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 28
+Loss = 1.7707e-01, PNorm = 52.9519, GNorm = 0.4150, lr_0 = 1.1522e-04
+Loss = 1.8647e-01, PNorm = 52.9620, GNorm = 0.1494, lr_0 = 1.1453e-04
+Loss = 1.7338e-01, PNorm = 52.9739, GNorm = 0.1244, lr_0 = 1.1384e-04
+Loss = 1.6918e-01, PNorm = 52.9857, GNorm = 0.1659, lr_0 = 1.1316e-04
+Loss = 1.6155e-01, PNorm = 52.9951, GNorm = 0.3160, lr_0 = 1.1249e-04
+Loss = 1.7561e-01, PNorm = 53.0066, GNorm = 0.1834, lr_0 = 1.1181e-04
+Loss = 1.7148e-01, PNorm = 53.0163, GNorm = 0.1688, lr_0 = 1.1114e-04
+Loss = 1.8379e-01, PNorm = 53.0246, GNorm = 0.2824, lr_0 = 1.1048e-04
+Loss = 1.5877e-01, PNorm = 53.0385, GNorm = 0.1007, lr_0 = 1.0982e-04
+Loss = 1.7146e-01, PNorm = 53.0458, GNorm = 0.1233, lr_0 = 1.0916e-04
+Loss = 1.6778e-01, PNorm = 53.0611, GNorm = 0.3762, lr_0 = 1.0851e-04
+Loss = 1.8217e-01, PNorm = 53.0685, GNorm = 0.1625, lr_0 = 1.0786e-04
+Loss = 1.8398e-01, PNorm = 53.0804, GNorm = 0.2173, lr_0 = 1.0721e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Epoch 29
+Loss = 1.4697e-01, PNorm = 53.0906, GNorm = 0.3088, lr_0 = 1.0651e-04
+Loss = 1.8479e-01, PNorm = 53.0964, GNorm = 0.1849, lr_0 = 1.0587e-04
+Loss = 1.8012e-01, PNorm = 53.1081, GNorm = 0.1465, lr_0 = 1.0523e-04
+Loss = 1.7400e-01, PNorm = 53.1166, GNorm = 0.2015, lr_0 = 1.0460e-04
+Loss = 1.8834e-01, PNorm = 53.1237, GNorm = 0.2807, lr_0 = 1.0398e-04
+Loss = 1.6605e-01, PNorm = 53.1331, GNorm = 0.2476, lr_0 = 1.0336e-04
+Loss = 1.8279e-01, PNorm = 53.1449, GNorm = 0.1339, lr_0 = 1.0274e-04
+Loss = 1.4764e-01, PNorm = 53.1500, GNorm = 0.1566, lr_0 = 1.0212e-04
+Loss = 1.7737e-01, PNorm = 53.1575, GNorm = 0.2821, lr_0 = 1.0151e-04
+Loss = 1.7983e-01, PNorm = 53.1705, GNorm = 0.2322, lr_0 = 1.0090e-04
+Loss = 1.7117e-01, PNorm = 53.1802, GNorm = 0.3990, lr_0 = 1.0030e-04
+Loss = 1.6642e-01, PNorm = 53.1879, GNorm = 0.1766, lr_0 = 1.0000e-04
+Loss = 1.8488e-01, PNorm = 53.2023, GNorm = 0.1152, lr_0 = 1.0000e-04
+Loss = 1.6080e-01, PNorm = 53.2106, GNorm = 0.1959, lr_0 = 1.0000e-04
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with predictions all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Validation auc = nan
+Model 0 best validation auc = -inf on epoch 0
+Loading pretrained parameter "encoder.encoder.0.cached_zero_vector".
+Loading pretrained parameter "encoder.encoder.0.W_i.weight".
+Loading pretrained parameter "encoder.encoder.0.W_h.weight".
+Loading pretrained parameter "encoder.encoder.0.W_o.weight".
+Loading pretrained parameter "encoder.encoder.0.W_o.bias".
+Loading pretrained parameter "ffn.1.weight".
+Loading pretrained parameter "ffn.1.bias".
+Loading pretrained parameter "ffn.4.weight".
+Loading pretrained parameter "ffn.4.bias".
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Model 0 test auc = 0.501878
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Warning: Found a task with targets all 0s or all 1s
+Ensemble test auc = nan
+1-fold cross validation
+	Seed 0 ==> test auc = nan
+Overall test auc = nan +/- nan
+Elapsed time = 0:12:57

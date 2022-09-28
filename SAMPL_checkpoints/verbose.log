@@ -1,0 +1,380 @@
+Command line
+python /usr/local/bin/chemprop_train --data_path SAMPL.csv --dataset_type regression --save_dir SAMPL_checkpoints --smiles_columns smiles --ignore_columns mol_id
+Args
+{'activation': 'ReLU',
+ 'adding_h': False,
+ 'aggregation': 'mean',
+ 'aggregation_norm': 100,
+ 'atom_descriptor_scaling': True,
+ 'atom_descriptors': None,
+ 'atom_descriptors_path': None,
+ 'atom_descriptors_size': 0,
+ 'atom_features_size': 0,
+ 'atom_messages': False,
+ 'batch_size': 50,
+ 'bias': False,
+ 'bias_solvent': False,
+ 'bond_feature_scaling': True,
+ 'bond_features_path': None,
+ 'bond_features_size': 0,
+ 'cache_cutoff': 10000,
+ 'checkpoint_dir': None,
+ 'checkpoint_frzn': None,
+ 'checkpoint_path': None,
+ 'checkpoint_paths': None,
+ 'class_balance': False,
+ 'config_path': None,
+ 'crossval_index_dir': None,
+ 'crossval_index_file': None,
+ 'crossval_index_sets': None,
+ 'cuda': False,
+ 'data_path': 'SAMPL.csv',
+ 'data_weights_path': None,
+ 'dataset_type': 'regression',
+ 'depth': 3,
+ 'depth_solvent': 3,
+ 'device': device(type='cpu'),
+ 'dropout': 0.0,
+ 'empty_cache': False,
+ 'ensemble_size': 1,
+ 'epochs': 30,
+ 'evidential_regularization': 0,
+ 'explicit_h': False,
+ 'extra_metrics': [],
+ 'features_generator': None,
+ 'features_only': False,
+ 'features_path': None,
+ 'features_scaling': True,
+ 'features_size': None,
+ 'ffn_hidden_size': 300,
+ 'ffn_num_layers': 2,
+ 'final_lr': 0.0001,
+ 'folds_file': None,
+ 'freeze_first_only': False,
+ 'frzn_ffn_layers': 0,
+ 'gpu': None,
+ 'grad_clip': None,
+ 'hidden_size': 300,
+ 'hidden_size_solvent': 300,
+ 'ignore_columns': ['mol_id'],
+ 'init_lr': 0.0001,
+ 'log_frequency': 10,
+ 'loss_function': 'mse',
+ 'max_data_size': None,
+ 'max_lr': 0.001,
+ 'metric': 'rmse',
+ 'metrics': ['rmse'],
+ 'minimize_score': True,
+ 'mpn_shared': False,
+ 'multiclass_num_classes': 3,
+ 'no_atom_descriptor_scaling': False,
+ 'no_bond_features_scaling': False,
+ 'no_cache_mol': False,
+ 'no_cuda': False,
+ 'no_features_scaling': False,
+ 'num_folds': 1,
+ 'num_lrs': 1,
+ 'num_tasks': 3,
+ 'num_workers': 8,
+ 'number_of_molecules': 1,
+ 'overwrite_default_atom_features': False,
+ 'overwrite_default_bond_features': False,
+ 'phase_features_path': None,
+ 'pytorch_seed': 0,
+ 'quiet': False,
+ 'reaction': False,
+ 'reaction_mode': 'reac_diff',
+ 'reaction_solvent': False,
+ 'resume_experiment': False,
+ 'save_dir': 'SAMPL_checkpoints',
+ 'save_preds': False,
+ 'save_smiles_splits': False,
+ 'seed': 0,
+ 'separate_test_atom_descriptors_path': None,
+ 'separate_test_bond_features_path': None,
+ 'separate_test_features_path': None,
+ 'separate_test_path': None,
+ 'separate_test_phase_features_path': None,
+ 'separate_val_atom_descriptors_path': None,
+ 'separate_val_bond_features_path': None,
+ 'separate_val_features_path': None,
+ 'separate_val_path': None,
+ 'separate_val_phase_features_path': None,
+ 'show_individual_scores': False,
+ 'smiles_columns': ['smiles'],
+ 'spectra_activation': 'exp',
+ 'spectra_phase_mask_path': None,
+ 'spectra_target_floor': 1e-08,
+ 'split_key_molecule': 0,
+ 'split_sizes': [0.8, 0.1, 0.1],
+ 'split_type': 'random',
+ 'target_columns': None,
+ 'target_weights': None,
+ 'task_names': ['iupac', 'expt', 'calc'],
+ 'test': False,
+ 'test_fold_index': None,
+ 'train_data_size': None,
+ 'undirected': False,
+ 'use_input_features': False,
+ 'val_fold_index': None,
+ 'warmup_epochs': 2.0}
+Setting molecule featurization parameters to default.
+Loading data
+Command line
+python /usr/local/bin/chemprop_train --data_path SAMPL.csv --dataset_type regression --save_dir SAMPL_checkpoints --smiles_columns smiles --ignore_columns mol_id --target_columns expt
+Args
+{'activation': 'ReLU',
+ 'adding_h': False,
+ 'aggregation': 'mean',
+ 'aggregation_norm': 100,
+ 'atom_descriptor_scaling': True,
+ 'atom_descriptors': None,
+ 'atom_descriptors_path': None,
+ 'atom_descriptors_size': 0,
+ 'atom_features_size': 0,
+ 'atom_messages': False,
+ 'batch_size': 50,
+ 'bias': False,
+ 'bias_solvent': False,
+ 'bond_feature_scaling': True,
+ 'bond_features_path': None,
+ 'bond_features_size': 0,
+ 'cache_cutoff': 10000,
+ 'checkpoint_dir': None,
+ 'checkpoint_frzn': None,
+ 'checkpoint_path': None,
+ 'checkpoint_paths': None,
+ 'class_balance': False,
+ 'config_path': None,
+ 'crossval_index_dir': None,
+ 'crossval_index_file': None,
+ 'crossval_index_sets': None,
+ 'cuda': False,
+ 'data_path': 'SAMPL.csv',
+ 'data_weights_path': None,
+ 'dataset_type': 'regression',
+ 'depth': 3,
+ 'depth_solvent': 3,
+ 'device': device(type='cpu'),
+ 'dropout': 0.0,
+ 'empty_cache': False,
+ 'ensemble_size': 1,
+ 'epochs': 30,
+ 'evidential_regularization': 0,
+ 'explicit_h': False,
+ 'extra_metrics': [],
+ 'features_generator': None,
+ 'features_only': False,
+ 'features_path': None,
+ 'features_scaling': True,
+ 'features_size': None,
+ 'ffn_hidden_size': 300,
+ 'ffn_num_layers': 2,
+ 'final_lr': 0.0001,
+ 'folds_file': None,
+ 'freeze_first_only': False,
+ 'frzn_ffn_layers': 0,
+ 'gpu': None,
+ 'grad_clip': None,
+ 'hidden_size': 300,
+ 'hidden_size_solvent': 300,
+ 'ignore_columns': ['mol_id'],
+ 'init_lr': 0.0001,
+ 'log_frequency': 10,
+ 'loss_function': 'mse',
+ 'max_data_size': None,
+ 'max_lr': 0.001,
+ 'metric': 'rmse',
+ 'metrics': ['rmse'],
+ 'minimize_score': True,
+ 'mpn_shared': False,
+ 'multiclass_num_classes': 3,
+ 'no_atom_descriptor_scaling': False,
+ 'no_bond_features_scaling': False,
+ 'no_cache_mol': False,
+ 'no_cuda': False,
+ 'no_features_scaling': False,
+ 'num_folds': 1,
+ 'num_lrs': 1,
+ 'num_tasks': 1,
+ 'num_workers': 8,
+ 'number_of_molecules': 1,
+ 'overwrite_default_atom_features': False,
+ 'overwrite_default_bond_features': False,
+ 'phase_features_path': None,
+ 'pytorch_seed': 0,
+ 'quiet': False,
+ 'reaction': False,
+ 'reaction_mode': 'reac_diff',
+ 'reaction_solvent': False,
+ 'resume_experiment': False,
+ 'save_dir': 'SAMPL_checkpoints',
+ 'save_preds': False,
+ 'save_smiles_splits': False,
+ 'seed': 0,
+ 'separate_test_atom_descriptors_path': None,
+ 'separate_test_bond_features_path': None,
+ 'separate_test_features_path': None,
+ 'separate_test_path': None,
+ 'separate_test_phase_features_path': None,
+ 'separate_val_atom_descriptors_path': None,
+ 'separate_val_bond_features_path': None,
+ 'separate_val_features_path': None,
+ 'separate_val_path': None,
+ 'separate_val_phase_features_path': None,
+ 'show_individual_scores': False,
+ 'smiles_columns': ['smiles'],
+ 'spectra_activation': 'exp',
+ 'spectra_phase_mask_path': None,
+ 'spectra_target_floor': 1e-08,
+ 'split_key_molecule': 0,
+ 'split_sizes': [0.8, 0.1, 0.1],
+ 'split_type': 'random',
+ 'target_columns': ['expt'],
+ 'target_weights': None,
+ 'task_names': ['expt'],
+ 'test': False,
+ 'test_fold_index': None,
+ 'train_data_size': None,
+ 'undirected': False,
+ 'use_input_features': False,
+ 'val_fold_index': None,
+ 'warmup_epochs': 2.0}
+Setting molecule featurization parameters to default.
+Loading data
+Number of tasks = 1
+Fold 0
+Splitting data with seed 0
+Total size = 642 | train size = 513 | val size = 64 | test size = 65
+Fitting scaler
+Building model 0
+MoleculeModel(
+  (encoder): MPN(
+    (encoder): ModuleList(
+      (0): MPNEncoder(
+        (dropout_layer): Dropout(p=0.0, inplace=False)
+        (act_func): ReLU()
+        (W_i): Linear(in_features=147, out_features=300, bias=False)
+        (W_h): Linear(in_features=300, out_features=300, bias=False)
+        (W_o): Linear(in_features=433, out_features=300, bias=True)
+      )
+    )
+  )
+  (ffn): Sequential(
+    (0): Dropout(p=0.0, inplace=False)
+    (1): Linear(in_features=300, out_features=300, bias=True)
+    (2): ReLU()
+    (3): Dropout(p=0.0, inplace=False)
+    (4): Linear(in_features=300, out_features=1, bias=True)
+  )
+)
+Number of parameters = 355,201
+Epoch 0
+Loss = 8.2164e-01, PNorm = 34.0210, GNorm = 2.2038, lr_0 = 5.9500e-04
+Loss = 5.9216e-01, PNorm = 34.0231, GNorm = 6.7061, lr_0 = 6.4000e-04
+Validation rmse = 2.735954
+Epoch 1
+Loss = 6.0427e-01, PNorm = 34.0683, GNorm = 3.4602, lr_0 = 9.8369e-04
+Loss = 5.3150e-01, PNorm = 34.0726, GNorm = 8.4286, lr_0 = 9.7563e-04
+Validation rmse = 2.288183
+Epoch 2
+Loss = 4.2148e-01, PNorm = 34.1210, GNorm = 5.8726, lr_0 = 8.9861e-04
+Loss = 2.4697e-01, PNorm = 34.1251, GNorm = 3.4975, lr_0 = 8.9125e-04
+Validation rmse = 1.998585
+Epoch 3
+Loss = 3.1374e-01, PNorm = 34.1771, GNorm = 5.9481, lr_0 = 8.2089e-04
+Validation rmse = 1.817360
+Epoch 4
+Loss = 1.9374e-01, PNorm = 34.2308, GNorm = 4.1059, lr_0 = 7.5609e-04
+Validation rmse = 1.456150
+Epoch 5
+Loss = 1.2140e-01, PNorm = 34.2759, GNorm = 1.6380, lr_0 = 6.9069e-04
+Validation rmse = 1.425633
+Epoch 6
+Loss = 1.0673e-01, PNorm = 34.3133, GNorm = 1.2829, lr_0 = 6.3096e-04
+Validation rmse = 1.434677
+Epoch 7
+Loss = 1.1353e-01, PNorm = 34.3265, GNorm = 0.7832, lr_0 = 5.7639e-04
+Validation rmse = 1.331755
+Epoch 8
+Loss = 8.1012e-02, PNorm = 34.3484, GNorm = 2.4689, lr_0 = 5.3088e-04
+Validation rmse = 1.226226
+Epoch 9
+Loss = 7.9582e-02, PNorm = 34.3616, GNorm = 2.5590, lr_0 = 4.8497e-04
+Validation rmse = 1.136856
+Epoch 10
+Loss = 7.1839e-02, PNorm = 34.3797, GNorm = 1.4170, lr_0 = 4.4303e-04
+Validation rmse = 1.241201
+Epoch 11
+Loss = 7.6150e-02, PNorm = 34.3934, GNorm = 4.9987, lr_0 = 4.0471e-04
+Validation rmse = 1.483796
+Epoch 12
+Loss = 1.0188e-01, PNorm = 34.4068, GNorm = 0.9146, lr_0 = 3.7276e-04
+Validation rmse = 1.127492
+Epoch 13
+Loss = 6.4683e-02, PNorm = 34.4161, GNorm = 2.7286, lr_0 = 3.4052e-04
+Validation rmse = 1.132189
+Epoch 14
+Loss = 5.3251e-02, PNorm = 34.4280, GNorm = 0.5591, lr_0 = 3.1107e-04
+Validation rmse = 1.146340
+Epoch 15
+Loss = 4.9197e-02, PNorm = 34.4389, GNorm = 1.5649, lr_0 = 2.8417e-04
+Validation rmse = 1.098281
+Epoch 16
+Loss = 6.1574e-02, PNorm = 34.4457, GNorm = 1.1398, lr_0 = 2.6173e-04
+Validation rmse = 1.093752
+Epoch 17
+Loss = 4.7658e-02, PNorm = 34.4544, GNorm = 0.8180, lr_0 = 2.3910e-04
+Validation rmse = 1.085682
+Epoch 18
+Loss = 4.7169e-02, PNorm = 34.4632, GNorm = 1.4557, lr_0 = 2.1842e-04
+Validation rmse = 1.101715
+Epoch 19
+Loss = 4.7984e-02, PNorm = 34.4701, GNorm = 1.8587, lr_0 = 1.9953e-04
+Validation rmse = 1.083345
+Epoch 20
+Loss = 4.7384e-02, PNorm = 34.4759, GNorm = 0.8557, lr_0 = 1.8377e-04
+Validation rmse = 1.073577
+Epoch 21
+Loss = 4.2628e-02, PNorm = 34.4815, GNorm = 0.6013, lr_0 = 1.6788e-04
+Validation rmse = 1.055951
+Epoch 22
+Loss = 4.0851e-02, PNorm = 34.4869, GNorm = 1.1585, lr_0 = 1.5336e-04
+Validation rmse = 1.073326
+Epoch 23
+Loss = 3.6080e-02, PNorm = 34.4925, GNorm = 1.7948, lr_0 = 1.4010e-04
+Validation rmse = 1.063148
+Epoch 24
+Loss = 3.1101e-02, PNorm = 34.4970, GNorm = 0.6420, lr_0 = 1.2904e-04
+Validation rmse = 1.059424
+Epoch 25
+Loss = 2.6611e-02, PNorm = 34.5015, GNorm = 0.4707, lr_0 = 1.1788e-04
+Validation rmse = 1.067810
+Epoch 26
+Loss = 3.7763e-02, PNorm = 34.5063, GNorm = 0.3845, lr_0 = 1.0768e-04
+Validation rmse = 1.112724
+Epoch 27
+Loss = 4.4590e-02, PNorm = 34.5099, GNorm = 1.0379, lr_0 = 1.0000e-04
+Validation rmse = 1.055305
+Epoch 28
+Loss = 3.5685e-02, PNorm = 34.5132, GNorm = 0.7922, lr_0 = 1.0000e-04
+Validation rmse = 1.112292
+Epoch 29
+Loss = 4.3974e-02, PNorm = 34.5170, GNorm = 1.5618, lr_0 = 1.0000e-04
+Validation rmse = 1.076616
+Model 0 best validation rmse = 1.055305 on epoch 27
+Loading pretrained parameter "encoder.encoder.0.cached_zero_vector".
+Loading pretrained parameter "encoder.encoder.0.W_i.weight".
+Loading pretrained parameter "encoder.encoder.0.W_h.weight".
+Loading pretrained parameter "encoder.encoder.0.W_o.weight".
+Loading pretrained parameter "encoder.encoder.0.W_o.bias".
+Loading pretrained parameter "ffn.1.weight".
+Loading pretrained parameter "ffn.1.bias".
+Loading pretrained parameter "ffn.4.weight".
+Loading pretrained parameter "ffn.4.bias".
+Model 0 test rmse = 0.911547
+Ensemble test rmse = 0.911547
+1-fold cross validation
+	Seed 0 ==> test rmse = 0.911547
+Overall test rmse = 0.911547 +/- 0.000000
+Elapsed time = 0:00:26
